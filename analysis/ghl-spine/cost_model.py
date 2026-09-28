@@ -27,17 +27,19 @@ REVLABS_MIX = {"track_b": 0.6, "growth": 0.3, "full": 0.1}
 INTERNAL = {
     "RevLabs prospecting, Illinois calling": ("revlabs", 25.0),  # ~600 call min out, 2 numbers, A2P $10, 3k emails
     "RevLabs Texas email lane (no number)": ("revlabs", 3.0),
-    "TF sales pipeline (email only)": ("tf", 3.0),
+    "Sandbox ZZ-TEST-Spine-Analysis": ("revlabs", 0.0),
     "HomeEasy (Leasify test bed)": ("leasify", 0.0),  # usage billed to HomeEasy, outside this model
 }
 
 
 def leasify_client(n):
     """Per client per month, base case from 02-LEASIFY-FIT.md section 5 (plan share excluded)."""
-    usage = 172.55          # 12k SMS segments, 6k emails, 2 numbers, 6k AI replies, 100 Voice AI min
+    # 20k SMS segments (20 per lead, red team 07 correction of 02's 12), 6k emails, 2 numbers,
+    # 6k AI replies, 100 Voice AI min. 02's $172.55 at 12 segments + 8,000 x $0.0115.
+    usage = 172.55 + 8000 * 0.0115
     addons = 25.33          # A2P $10 campaign + $64 brand over 12 months + Workflow Pro $10
     integrations = 50 / n + 2   # shared Postgres/n8n/matching infra, $50/mo fixed + $2 per client [assumption]
-    labour = 40.0           # 5 h at $8, platform ops only (service delivery excluded)
+    labour = 40.0 + 4.0     # 5 h at $8 platform ops + 0.5 h monthly compliance audit (07); service delivery excluded
     build = 200 / n         # 300 h build at $8 = $2,400, spread over 12 months
     return usage + addons + integrations + labour + build
 
@@ -46,12 +48,12 @@ def revlabs_costs():
     """Per client per month by product, base case from 03-REVLABS-FIT.md section 5 (plan share excluded)."""
     return {
         "track_b": 8.14,    # no sub-account: domain, payment fee, 0.75 h labour
-        "growth": 22.19,    # 500 emails, 100 SMS segments, number, A2P, 100 premium actions, fee, 1.5 h
-        "full": 45.22,      # ongoing run cost after the one-off $999 build, 3 h
+        "growth": 22.19 + 4.0,  # 03 base + 0.5 h monthly compliance audit (07)
+        "full": 45.22 + 4.0,    # 03 ongoing run cost after the one-off $999 build + audit
     }
 
 
-REVLABS_PRICE = {"track_b": 29, "growth": 99, "full": 99}  # Full system ongoing fee assumed = Growth $99
+REVLABS_PRICE = {"track_b": 29, "growth": 99, "full": 149}  # Full system care fee set at $149 in 00-VERDICT
 TF_PRICE = 249
 TF_COST_TO_SERVE = 12.85 + 2.00  # context cost to serve + first A2P campaign (04 section 5)
 LEASIFY_PRICE = 499
@@ -65,8 +67,8 @@ def scenario(plan_name, plan, n):
     # Sub-accounts by line (verdict architecture: see 00-VERDICT.md)
     subs = {
         "leasify": n + 1,                 # one per client + HomeEasy
-        "revlabs": rl_ghl_clients + 2,    # Growth/Full clients + 2 internal
-        "tf": 1,                          # internal sales pipeline only
+        "revlabs": rl_ghl_clients + 3,    # Growth/Full clients + Illinois, Texas, sandbox
+        "tf": 0,                          # TF: don't use GHL for now (00-VERDICT)
     }
     total_subs = sum(subs.values())
     feasible = plan["max_subaccounts"] is None or total_subs <= plan["max_subaccounts"]

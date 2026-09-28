@@ -1,5 +1,7 @@
 # 02 Leasify: GHL fit
 
+> **Master note (see `00-VERDICT.md`, `07`):** the verdict holds, with these changes. SMS is modelled at 20 segments per lead, not 12. The $499 tier is capped at 500 leads, not 1,000. HomeEasy starts as a 100-hour MVP. Listing-site leads get email or a call first. SLA wording excludes vendor outages.
+
 Basis: `01-GHL-TEARDOWN.md` (docs only, checked 28 Sep 2026, no live account). Facts are cited as `[tag, via 01]`. Anything not in 01 is marked `[assumption]`. Our labour is $8/hour (range $5 to $12), SMS delivered cost is about $0.0115 per segment, and the GHL plan is Unlimited at $297 shared by three lines.
 
 ## Decisions this report makes

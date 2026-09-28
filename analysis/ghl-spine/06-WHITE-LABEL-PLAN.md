@@ -1,6 +1,6 @@
 # 06 White-label plan
 
-Decision: **keep GHL invisible and sell done-for-you in all three lines. No SaaS mode, no branded "platform" product, no white-label mobile app.** One agency account carries all three lines. The plan below covers how that looks to clients, how money moves, and how we leave if we need to.
+Decision: **keep GHL invisible and sell done-for-you wherever GHL is used (Leasify and RevLabs; TF stays off GHL for now). No SaaS mode, no branded "platform" product, no white-label mobile app.** One agency account carries both lines, and TF later if it joins. The plan below covers how that looks to clients, how money moves, and how we leave if we need to.
 
 Facts are from `01-GHL-TEARDOWN.md` (public docs, checked 28 Sep 2026, no live account). Items marked "live check" are in `08`.
 
@@ -20,9 +20,9 @@ Facts are from `01-GHL-TEARDOWN.md` (public docs, checked 28 Sep 2026, no live a
 | Leasify sub-accounts | One per client, plus HomeEasy | The client's own property or locator brand on texts and emails. Leasify appears only in reports |
 | RevLabs internal sub-accounts | Illinois calling, Texas email lane (no phone number) | RevLabs, from separate warmed sending domains |
 | RevLabs client sub-accounts | One per Growth, Automation or Full-system client | The client's own business name, number and sending domain |
-| TF internal sub-account | TF sales pipeline, email only | Table Foundry |
+| TF | No sub-account for now. Sales run on a sheet plus email (`00`) | n/a |
 
-Why one agency account and not three:
+Why one agency account and not three (or two):
 - One white-label login domain per agency is a real limit [ghl-docs, community, via 01], but it only matters if clients log in, and in a done-for-you model they don't.
 - Three agencies cost $891 against $297 and triple the snapshot, audit and billing work (`05`).
 - Per sub-account branding (sending domain, links domain, sites domain) already covers everything a client or their customer sees [ghl-docs, via 01].
@@ -30,6 +30,7 @@ Why one agency account and not three:
 ## Domains
 
 - **Sending domain per sub-account:** always the client's own domain or a subdomain of it, for example `mail.clientname.com`, with SPF, DKIM and DMARC set by us. For RevLabs internal use, one warmed domain for Illinois and a separate warmed domain for the Texas lane, as already locked.
+- **RevLabs cold email goes through our own SMTP (bring-your-own), not the shared LC Email pool.** One cold-email complaint on the shared pool can hurt deliverability for Leasify's client sends (`07`).
 - **Links domain per sub-account:** the same client domain, so tracked links do not show a GHL domain.
 - **Sites domain:** not used for Track B sites, which stay as static builds on Netlify or Cloudflare with an embedded GHL form only for Growth-and-up clients (`03`). Leasify and TF do not host sites on GHL.
 
@@ -44,9 +45,9 @@ Why one agency account and not three:
 - **GHL bills us.** The plan fee and all usage (SMS, calls, email, AI, A2P fees, premium actions) come out of our agency wallet on our card [ghl-docs, via 01].
 - **We bill clients on our own invoices, never GHL invoices.** GHL's PDF invoices cannot be fully white-labelled [ghl-docs, via 01], and GHL's usage rebilling runs through an agency Stripe we don't have.
 - **Usage is priced into the retainer, with a cap:**
-  - Leasify $499 includes up to about 1,000 new leads a month. Above that, bill $225 per extra 1,000 leads (cost about $173 plus 30%), or move the client to $999 (`02`).
-  - RevLabs Growth $99 includes normal usage: base cost is $22 before plan share (`03`).
-  - RevLabs Full system: the $100 communication credit is tracked per sub-account by us. Usage above it is invoiced monthly at cost plus 20%, the simplest rule a client will accept without arguing over pennies.
+  - Leasify $499 includes up to 500 new leads a month. Above that, bill $35 per extra 100 leads (cost about $26), or move the client to the $999 tier (`05`). This is a fair-use cap, not a price rise, so the "don't raise the entry price" rule holds.
+  - RevLabs Growth $99 includes normal usage: base cost is about $26 before plan share (`05`).
+  - RevLabs Full system: $999 setup, then $149 a month system care from month 2 (`00`). The $100 communication credit is one-off and tracked per sub-account by us. Once it is used, usage is invoiced monthly at cost plus 20%, the simplest rule a client will accept without arguing over pennies.
   - TF: no restaurant usage on GHL.
 - **Weekly usage check per sub-account.** GHL cannot hard-cap a sub-account's spend without rebilling [assumption, 03]. One saved report, 10 minutes a week.
 - **Which processor charges clients:** the context mentions RevLabs payment links but does not name the processor. Keep using whatever is live. This plan does not depend on it.
@@ -78,7 +79,7 @@ Estimated exit cost at 50 clients with these in place: about 1 to 2 hours per cl
 ## When to revisit white-label
 
 Revisit SaaS mode only when all three are true:
-1. A US entity with a US Stripe account exists. It may be formed anyway, for TF's Stripe Connect (see `00`).
+1. A US entity with a US Stripe account exists. It is being formed now for TF's Stripe Connect (see `00`).
 2. At least 15 RevLabs clients have asked for self-serve access.
 3. A lawyer has read GHL's minimum advertised price clause against the tiers we'd advertise.
 

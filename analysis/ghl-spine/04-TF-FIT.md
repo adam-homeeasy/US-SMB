@@ -1,5 +1,7 @@
 # 04 TF International: GHL fit
 
+> **Master note (see `00-VERDICT.md`, `07`):** verdict changed to **Don't use GHL for now**. The sales pipeline for 2 to 3 prospects runs on a sheet plus email until 30 Nov and 10 or more live prospects. Stripe Connect from India is treated as the top blocker, fixed by forming a US entity now.
+
 Line: Table Foundry International (TF Direct, US). Price $249/month, cost to serve $12.85 per restaurant per month at about 300 orders (both from the line context). GHL facts come from 01-GHL-TEARDOWN.md (docs only, checked 28 Sep 2026, no live account) and carry its tags "[tag, via 01]". Everything about our business that is not in the context file is marked [assumption].
 
 Terms used: **sub-account** is one client workspace inside our GHL agency. **Snapshot** is a copy-paste template of a sub-account setup. **PIT** is a Private Integration Token, a static API key for our own server. **A2P 10DLC** is the US carrier registration for business texting. **Premium action** is a workflow step that costs $0.01 per run.

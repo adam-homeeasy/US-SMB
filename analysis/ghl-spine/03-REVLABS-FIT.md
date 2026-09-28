@@ -1,5 +1,7 @@
 # 03 RevLabs US SMB: GHL fit
 
+> **Master note (see `00-VERDICT.md`, `07`):** the verdict holds, with these changes. Starter is outgrown once HomeEasy starts, not at a 4th RevLabs slot. Missed-call text back is off until counsel clears it. The Full system is $999 setup plus $149 a month care. Texas clients get email-only automations. Cold email runs on our own SMTP. The US entity starts now.
+
 Basis: 01-GHL-TEARDOWN.md (docs only, checked 28 Sep 2026, no live account). "[via 01]" means the fact and its source tag come from 01. GHL for RevLabs' own prospecting is settled and not re-argued. This report covers delivery to clients.
 
 Terms used: **sub-account** = a client workspace inside our GHL agency. **Snapshot** = a template of a sub-account we can copy. **DND** = do not disturb, a per-channel block on messaging a contact. **A2P 10DLC** = US carrier registration for business texts. **PIT** = private integration token, a key for our own scripts to call the GHL API.
