@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lakeside Heating & Air: Growth Roadmap</title>
+<style>
+  :root{
+    --ink:#1a2233; --ink-soft:#586178; --line:#e6e9f0; --bg:#f7f8fb; --card:#fff;
+    --brand:#2451c9; --brand-soft:#eaf0fe; --accent:#ffb020;
+    --good:#1a8f5e; --good-bg:#e7f8f0;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:var(--bg); color:var(--ink);}
+  .wrap{max-width:880px; margin:0 auto; padding:40px 24px 70px;}
+  .tag{display:inline-block; font-size:11px; background:#fdf3e0; color:#b5750a; padding:4px 11px; border-radius:20px; font-weight:700; margin-bottom:14px;}
+  header h1{font-size:28px; margin:0 0 6px;}
+  header .sub{color:var(--ink-soft); font-size:14.5px; line-height:1.6; margin-bottom:6px;}
+  .divider{height:1px; background:var(--line); margin:32px 0;}
+  h2.section-title{font-size:18px; margin:0 0 6px;}
+  .section-lead{color:var(--ink-soft); font-size:13.5px; line-height:1.6; margin:0 0 20px; max-width:640px;}
+
+  .milestone{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin-bottom:16px; display:flex; gap:18px;}
+  .milestone .badge{width:38px; height:38px; border-radius:10px; background:var(--brand-soft); color:var(--brand); font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:14px;}
+  .milestone.done .badge{background:var(--good-bg); color:var(--good);}
+  .milestone h3{margin:0 0 6px; font-size:16px;}
+  .milestone .when{font-size:11.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.4px; margin-bottom:8px; font-weight:700;}
+  .milestone p{margin:0 0 10px; font-size:13.5px; line-height:1.65; color:#2b3448;}
+  .milestone ul{margin:0; padding-left:18px; font-size:13.5px; line-height:1.7; color:#2b3448;}
+  .status-done{color:var(--good); font-weight:700; font-size:12px;}
+
+  .metric-strip{display:flex; gap:14px; margin:24px 0; flex-wrap:wrap;}
+  .metric{flex:1; min-width:150px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; text-align:center;}
+  .metric .num{font-size:22px; font-weight:800; color:var(--brand);}
+  .metric .label{font-size:11.5px; color:var(--ink-soft); margin-top:4px;}
+
+  .plan-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:16px;}
+  @media(max-width:720px){.plan-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.plan-grid{grid-template-columns:1fr;}}
+  .plan-card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; display:flex; flex-direction:column;}
+  .plan-card h4{margin:0 0 6px; font-size:14.5px;}
+  .plan-card .price{font-size:20px; font-weight:800; color:var(--ink); margin:6px 0 2px;}
+  .plan-card .price span{font-size:11.5px; font-weight:600; color:var(--ink-soft);}
+  .plan-card .setup{font-size:11.5px; color:var(--ink-soft); margin-bottom:10px;}
+  .plan-card p{font-size:12.5px; line-height:1.6; color:#2b3448; margin:0; flex-grow:1;}
+
+  .bundle-box{background:linear-gradient(135deg,#1a2233,#2c3a5c); color:#fff; border-radius:16px; padding:28px 30px; margin-top:6px;}
+  .bundle-box .bundle-head{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:14px; margin-bottom:16px;}
+  .bundle-box h3{margin:0 0 6px; font-size:19px;}
+  .bundle-box .bundle-sub{color:#c7d0e6; font-size:13px; max-width:480px; line-height:1.6;}
+  .bundle-price{text-align:right;}
+  .bundle-price .num{font-size:30px; font-weight:800; color:#7be8ae;}
+  .bundle-price .was{font-size:12.5px; color:#a9d9bf; text-decoration:line-through; margin-bottom:2px;}
+  .bundle-price .setup{font-size:11.5px; color:#a9d9bf; margin-top:4px;}
+  .bundle-list{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;}
+  .bundle-list span{background:rgba(255,255,255,.12); font-size:11.5px; padding:5px 12px; border-radius:20px;}
+  .bundle-box .btn{display:inline-block; background:var(--accent); color:#3a2a00; font-weight:700; font-size:13.5px; padding:10px 22px; border-radius:8px; text-decoration:none;}
+  .bundle-note{font-size:11.5px; color:#a9d9bf; margin-top:12px;}
+
+  footer{text-align:center; font-size:12px; color:var(--ink-soft); padding:30px 0 0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="tag">GROWTH ROADMAP</span>
+    <h1>Your growth roadmap</h1>
+    <div class="sub">Lakeside Heating & Air: prepared after your website launch</div>
+  </header>
+
+  <div class="milestone done">
+    <div class="badge">✓</div>
+    <div>
+      <div class="when">Delivered</div>
+      <h3>Your website is live</h3>
+      <p>It's built around what's actually working for the best HVAC sites nationally: live reviews, clear service-area coverage, and a mobile call bar so a breakdown call never gets lost in a menu.</p>
+      <span class="status-done">Status: complete</span>
+    </div>
+  </div>
+
+  <div class="metric-strip">
+    <div class="metric"><div class="num">$3.2K to $7.8K</div><div class="label">est. monthly revenue previously unreachable</div></div>
+    <div class="metric"><div class="num">62</div><div class="label">reviews now visible on site</div></div>
+    <div class="metric"><div class="num">0 to 3</div><div class="label">schema types now live (LocalBusiness, FAQPage, reviews)</div></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="section-title">What happens next</h2>
+  <p class="section-lead">The site is only the first piece. Here's what each next phase actually does, in the order it tends to matter most.</p>
+
+  <div class="milestone">
+    <div class="badge">1</div>
+    <div>
+      <div class="when">Product: Review</div>
+      <h3>Review</h3>
+      <p>Your 4.7 star rating is a real strength. The gap is visibility and response consistency, since only 15% of your reviews have ever gotten a reply. Review picks up monitoring immediately: it drafts owner responses for your approval, and tracks the trend the local map pack actually rewards.</p>
+      <ul>
+        <li>A drafted response to every new review. Nothing posts without your sign-off.</li>
+        <li>A monthly rating and review-count trend, checked against your three closest competitors.</li>
+        <li>A simple link or QR code you can hand customers so leaving a review takes them ten seconds.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="milestone">
+    <div class="badge">2</div>
+    <div>
+      <div class="when">Product: Traffic Optimizer</div>
+      <h3>Traffic Optimizer</h3>
+      <p>Your site launched with the schema and NAP fixes already built in. This is what keeps that working instead of quietly going stale.</p>
+      <ul>
+        <li>A content refresh every quarter, since pages left untouched lose AI answer engine citations fast.</li>
+        <li>Ongoing brand mentions built on the review and forum platforms your category actually gets discussed on.</li>
+        <li>A recheck of your map pack ranking for real service searches, not just people already searching your name.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="milestone">
+    <div class="badge">3</div>
+    <div>
+      <div class="when">Product: Lead Management</div>
+      <h3>Lead Management</h3>
+      <p>Two of your three closest competitors already take bookings online. You don't yet. This adds a real CRM and an AI front desk on top of the site that's already live: it answers after hours calls and texts, books straightforward jobs straight into your calendar, and only hands you the ones that need a real conversation.</p>
+      <ul>
+        <li>Online booking and a maintenance-plan signup path, so not every visitor has to call.</li>
+        <li>A seasonal lead magnet, like a free pre-winter furnace check checklist, to capture people who aren't ready to book yet.</li>
+        <li>After-hours call and text handling, with a human routed in for anything urgent or unusual.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="milestone">
+    <div class="badge">4</div>
+    <div>
+      <div class="when">Product: Invoicing</div>
+      <h3>Invoicing</h3>
+      <p>Chasing payment eats hours most owners never track. This connects to your bookkeeping and drafts every overdue reminder for you, gentle for good payers and firmer for repeat late ones, with a plain monthly summary of what's actually coming in.</p>
+      <ul>
+        <li>Draft, tone-matched payment reminders for every overdue invoice.</li>
+        <li>A monthly cash position summary you can read in under a minute.</li>
+        <li>Nothing sent or reconciled without a human checking it first.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="milestone">
+    <div class="badge">5</div>
+    <div>
+      <div class="when">Product: CRM</div>
+      <h3>CRM</h3>
+      <p>One place for every contact, job, and past conversation, instead of a phone full of texts and a notebook by the register. This is what Lead Management and Invoicing both plug into underneath.</p>
+      <ul>
+        <li>Every customer and job history in one searchable place.</li>
+        <li>A simple pipeline view of who's booked, who's quoted, and who's gone quiet.</li>
+        <li>Works standalone, or as the shared base for the other products above.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="section-title">Pricing, if bought one at a time</h2>
+  <p class="section-lead">Illustrative pricing, for planning purposes only.</p>
+
+  <div class="plan-grid">
+    <div class="plan-card">
+      <h4>Review</h4>
+      <div class="price">$79<span>/mo</span></div>
+      <div class="setup">No setup fee</div>
+      <p>Monitors and drafts. Uses data already collected at diagnostic time.</p>
+    </div>
+    <div class="plan-card">
+      <h4>Traffic Optimizer</h4>
+      <div class="price">$129<span>/mo</span></div>
+      <div class="setup">$199 setup</div>
+      <p>Ongoing SEO, local pack, and AI answer engine visibility work.</p>
+    </div>
+    <div class="plan-card">
+      <h4>Lead Management</h4>
+      <div class="price">$149<span>/mo</span></div>
+      <div class="setup">$299 setup</div>
+      <p>Booking, funnel, and an AI front desk for calls and texts.</p>
+    </div>
+    <div class="plan-card">
+      <h4>Invoicing</h4>
+      <div class="price">$59<span>/mo</span></div>
+      <div class="setup">$99 setup</div>
+      <p>Cash forecasting and drafted payment reminders.</p>
+    </div>
+    <div class="plan-card">
+      <h4>CRM</h4>
+      <div class="price">$49<span>/mo</span></div>
+      <div class="setup">No setup fee</div>
+      <p>Every contact and job in one place. The base the others plug into.</p>
+    </div>
+    <div class="plan-card" style="justify-content:center; align-items:center; background:var(--brand-soft); border-style:dashed;">
+      <p style="text-align:center; font-size:12.5px; color:var(--brand); font-weight:700;">$465/mo combined, if bought separately</p>
+    </div>
+  </div>
+
+  <div class="bundle-box">
+    <div class="bundle-head">
+      <div>
+        <h3>Or get all five, bundled</h3>
+        <div class="bundle-sub">Review, Traffic Optimizer, Lead Management, Invoicing, and CRM, run as one connected system instead of five separate logins.</div>
+      </div>
+      <div class="bundle-price">
+        <div class="was">$465/mo separately</div>
+        <div class="num">$149/mo</div>
+        <div class="setup">$199 one-time setup, down from $597</div>
+      </div>
+    </div>
+    <div class="bundle-list">
+      <span>Review</span><span>Traffic Optimizer</span><span>Lead Management</span><span>Invoicing</span><span>CRM</span>
+    </div>
+    <a class="btn" href="#">Start the bundle</a>
+    <div class="bundle-note">For comparison, a single stand-alone tool at this level typically starts around $200/mo on its own, before you've added a CRM, a funnel, or an AI front desk to it. This bundle covers all five for less than that.</div>
+  </div>
+
+  <footer>Prepared for Lakeside Heating & Air. Generated 2026-07-27. Pricing shown is illustrative only.</footer>
+</div>
+</body>
+</html>

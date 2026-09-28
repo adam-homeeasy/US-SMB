@@ -1,0 +1,2762 @@
+[
+  {
+    "account_id": "4afff49c-0043-4e2e-a176-944fa129be18",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "AA Service Co.",
+    "address": {
+      "formatted": "550 Anthony Trail, Northbrook, IL 60062, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 847-383-0416",
+    "google_place_id": "ChIJIZPcNKjAD4gRc1UVjzbRkAM",
+    "website_url": "https://aaserviceco.com/?utm_source=google&utm_medium=organic&utm_campaign=GBP&utm_content=anthony",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 3538
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "2c08f750-4509-4f3d-b710-7877cd16a924",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Deljo Heating, Cooling & Plumbing",
+    "address": {
+      "formatted": "4300 W Bryn Mawr Ave, Chicago, IL 60646, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-657-9989",
+    "google_place_id": "ChIJjepyM4TSD4gRdne4K_oNv4U",
+    "website_url": "https://deljoheating.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 3438
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "1b37c8b0-f771-4db9-bc63-4f4c950d8d7e",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Shavitz Heating and Air Conditioning",
+    "address": {
+      "formatted": "8024 St Louis Ave, Skokie, IL 60076, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 847-678-1000",
+    "google_place_id": "ChIJ1VvwUhLPD4gRq-7v1Ar-NUo",
+    "website_url": "https://www.shavitz.com/?utm_source=google+business+listing&utm_medium=organic&utm_campaign=click+to+website",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 2908
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "4071aa9c-ea4b-4a39-8d90-1b208f7dbd2a",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "All Temp Heating and Air Conditioning",
+    "address": {
+      "formatted": "4363 W Montrose Ave, Chicago, IL 60630, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 708-320-3606",
+    "google_place_id": "ChIJ0xGavzTMD4gRE4b0UwUoxhc",
+    "website_url": "https://alltemp.com/?utm_campaign=gmb",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 2495
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "139cd6cb-252c-49bc-a063-80b556559e8e",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Four Seasons Heating, Air Conditioning, Plumbing, Sewer & Electric",
+    "address": {
+      "formatted": "5701 W 73rd St, Chicago, IL 60638, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-219-2190",
+    "google_place_id": "ChIJc2Qg7McwDogR1-GnnjwcNao",
+    "website_url": "https://www.fourseasonsheatingcooling.com/?utm_source=gbp&utm_medium=organic&utm_campaign=gbp-chicago",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.7,
+      "review_count": 30205
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "54f4b30a-1256-400e-a501-47a0304dbff7",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Perfect Home Services",
+    "address": {
+      "formatted": "78 Eisenhower Ln N, Lombard, IL 60148, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 630-519-6620",
+    "google_place_id": "ChIJidv1pxL5DogRuIMrWHFgjNY",
+    "website_url": "https://www.perfecthomeservices.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.7,
+      "review_count": 5811
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "682d8e08-3ab9-4151-b866-e91376efd9b0",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Besco Air Inc.",
+    "address": {
+      "formatted": "5850 N Northwest Hwy, Chicago, IL 60631, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 312-809-2695",
+    "google_place_id": "ChIJhXHMHaDOD4gRiFPB3JtTDBY",
+    "website_url": "https://www.bescoair.net/service-area/chicago-il/?utm_source=google&utm_medium=organic&utm_campaign=GBPListing-Chicago-IL",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 1476
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "2022242a-6e78-47e2-a543-abf10b3ff025",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Oasis Plumbing, Heating & Cooling",
+    "address": {
+      "formatted": "5736 N Western Ave, Chicago, IL 60659, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-320-5395",
+    "google_place_id": "ChIJBzmeOBjRD4gR-G-2hyR4A0k",
+    "website_url": "https://oasisheating.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 1322
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "8cb35697-78f8-48c8-80bb-97e0921ab1d2",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Air Flows Chicago - Belmont",
+    "address": {
+      "formatted": "3019 W Belmont Ave, Chicago, IL 60618, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-345-9684",
+    "google_place_id": "ChIJD4qpZ73ND4gREYhBOivcUwg",
+    "website_url": "https://airflowschicago.com/locations/air-flows-chicago-w-belmont-avenue/?utm_source=google&utm_medium=organic&utm_campaign=gbp_belmont&utm_content=website_link",
+    "has_website": true,
+    "review_signal": {
+      "rating": 5,
+      "review_count": 1080
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "8f8c86df-eac4-4068-a3a1-0b84e7435b42",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Air Flows Chicago",
+    "address": {
+      "formatted": "2333 N Seeley Ave Unit 5S, Chicago, IL 60647, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 866-494-6778",
+    "google_place_id": "ChIJmyzf2HTTD4gR4L292Ous4HQ",
+    "website_url": "https://airflowschicago.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 1128
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "c816123a-9f3a-4f48-b183-9a7d71f95e6e",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Guardian Heating & Cooling Service",
+    "address": {
+      "formatted": "3916 N Central Park Ave, Chicago, IL 60618, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-377-9568",
+    "google_place_id": "ChIJlaO7Gb7ND4gROzqJdrpEcFo",
+    "website_url": "https://guardianheatingandcooling.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.8,
+      "review_count": 1219
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "a889c174-ea66-4a67-91e7-d8d5d23d066f",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Elite HVACs Furnace, Ac & Plumbing Repair",
+    "address": {
+      "formatted": "8046 Central Park Ave, Skokie, IL 60076, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-985-4862",
+    "google_place_id": "ChIJdXNT3bQyDogRCXnANBTekMQ",
+    "website_url": "https://elitehvacs.com/residential/air-conditioning-repair-in-skokie-il/?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 898
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "2adee468-df66-4af4-abc5-44ed52675880",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Heatmasters",
+    "address": {
+      "formatted": "5540 W Lawrence Ave, Chicago, IL 60630, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-777-5700",
+    "google_place_id": "ChIJPwiBUQXMD4gRuinUP8a5evc",
+    "website_url": "https://www.heatmasters.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.8,
+      "review_count": 756
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "3f3a3cd6-8f3e-473f-badf-ef7a18ebb8af",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Chicago HVAC Repair Doctor",
+    "address": {
+      "formatted": "4049 Washington Blvd, Hillside, IL 60162, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 872-312-7974",
+    "google_place_id": "ChIJvYGD78BLDogRbMdcd_eVlAc",
+    "website_url": "https://www.chicagohvacrepairdr.com/service-area/hillside-il/?utm_source=google&utm_medium=organic&utm_campaign=gbp&utm_content=hillside",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.8,
+      "review_count": 439
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "a7ef91ba-3487-4315-98d6-01ee6c0b3897",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Five Star HVAC Services, Inc.",
+    "address": {
+      "formatted": "4949 N Elston Ave, Chicago, IL 60630, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-386-6993",
+    "google_place_id": "ChIJxd7bAlTND4gRjPtaNfkRzm4",
+    "website_url": "https://fivestar247.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 423
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "a1ac4023-9b8c-44e7-a877-4d322bca735e",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Green Air Care",
+    "address": {
+      "formatted": "3257 N Sheffield Ave #109, Chicago, IL 60657, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 224-850-3051",
+    "google_place_id": "ChIJ2w9VV5ssDogROOCIDDCYBK4",
+    "website_url": "https://greenaircare.com/?utm_source=google&utm_medium=organic&utm_campaign=GMBListing-Chicago-IL",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.7,
+      "review_count": 376
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "13e16196-7b33-4ac3-aca1-c4fe4c8b2b48",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Any Temp Heating & Cooling",
+    "address": {
+      "formatted": "437 N Wesley Dr, Addison, IL 60101, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 630-326-7814",
+    "google_place_id": "ChIJUWHQhX2tD4gRSnkjLwQhXpE",
+    "website_url": "https://any-temp.com/?utm_source=gmb&utm_medium=addison",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 368
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "4471a0db-8eac-4e8b-aafa-9420617d267a",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Hero Air",
+    "address": {
+      "formatted": "4823 W Patterson Ave, Chicago, IL 60641, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-572-7271",
+    "google_place_id": "ChIJhdxYVzzLD4gRVRumA6dEzYU",
+    "website_url": "https://www.myheroair.com/?utm_campaign=gmb",
+    "has_website": true,
+    "review_signal": {
+      "rating": 5,
+      "review_count": 348
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "2082aae9-5a20-45e2-9d91-75a010e938ea",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Direct Improvements",
+    "address": {
+      "formatted": "111 W Jackson Blvd Unit 1700, Chicago, IL 60604, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 708-578-8601",
+    "google_place_id": "ChIJb0K1C3QtDogRdO9E2LD4fcw",
+    "website_url": "http://www.directimprovements.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.7,
+      "review_count": 345
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "70c9f50d-dc44-4871-8893-3333eaa65c75",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Global Heating and Cooling LLC | HVAC",
+    "address": {
+      "formatted": "919 N Ashland Ave, Chicago, IL 60622, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-801-3734",
+    "google_place_id": "ChIJi4yPKtXTD4gRZJjJD8jY8yA",
+    "website_url": "https://www.globalheatingcooling.us/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 307
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "1313d5ab-2e16-4d16-8fdc-8925d24d20d7",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Pro Comfort Solutions",
+    "address": {
+      "formatted": "2052 N Latrobe Ave, Chicago, IL 60639, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 872-364-4946",
+    "google_place_id": "ChIJXYDE4kxWqkURLZwEDI7DACw",
+    "website_url": "https://www.procomfortsolutions.com/?utm_campaign=gmb",
+    "has_website": true,
+    "review_signal": {
+      "rating": 5,
+      "review_count": 268
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "f64d0b0c-e76e-4cfe-bb4d-5c474ace259c",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Chicago Comfort HVAC Services",
+    "address": {
+      "formatted": "6127 S University Ave Ste 1162, Chicago, IL 60637, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-842-4299",
+    "google_place_id": "ChIJJ_iutHwpDogR0-O5xhgVfMg",
+    "website_url": "https://www.chicagocomforthvac.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 270
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "42b0a36d-9d0e-4ea2-ae3e-7bbce47d7948",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Tabor's Complete Comfort Mechanical",
+    "address": {
+      "formatted": "1449 S Michigan Ave, Chicago, IL 60605, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-715-3860",
+    "google_place_id": "ChIJHUi8rssvDogREyfTnzsLpl4",
+    "website_url": "https://www.tccmechanical.com/?utm_source=GBP",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 265
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "f58cbd4b-80d3-499b-83f3-4eb86bf73a93",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Brothers Heating & Cooling Inc. & Brothers Perfect Construction LLC",
+    "address": {
+      "formatted": "2914 N Cicero Ave, Chicago, IL 60641, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-387-7394",
+    "google_place_id": "ChIJadXyYffMD4gRXp9_vTJdg0g",
+    "website_url": null,
+    "has_website": false,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 259
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": "no_website"
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": true,
+      "reason": "no_website_downsell",
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "68cfef12-6ffd-48eb-b3d3-4bb635ead001",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "eXpedience Heating & Cooling",
+    "address": {
+      "formatted": "7330 S Ridgeland Ave, Chicago, IL 60649, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": null,
+    "google_place_id": "ChIJd03sDkEoDogR3w9hy5ChVRo",
+    "website_url": "http://expediencehvac.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 212
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "536a7a10-ab25-412c-b9f7-b8a72e810978",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Browns Heating & Cooling",
+    "address": {
+      "formatted": "1 E Erie St, Chicago, IL 60611, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 708-536-8134",
+    "google_place_id": "ChIJmfN_kekXDogRmoox1XEHZ84",
+    "website_url": "https://brownshvac.net/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 209
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "e739d2c9-aa64-4b0e-b31c-d82b2f285e6e",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Ralph's Heating and Air conditioning Services",
+    "address": {
+      "formatted": "2714 E 79th St, Chicago, IL 60649, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-375-4600",
+    "google_place_id": "ChIJ3weN4RQoDogRvFucAJK86GQ",
+    "website_url": "https://www.ralphsheating.net/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.7,
+      "review_count": 205
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "628c456c-c75e-47e2-a753-6062dea93b38",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "MIRON Heating & Cooling, Inc",
+    "address": {
+      "formatted": "5706 N Northwest Hwy, Chicago, IL 60646, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 847-483-5125",
+    "google_place_id": "ChIJWY3lTLnJD4gRHZ7YcGWL8f4",
+    "website_url": "https://mironhvac.com/locations/ac-repair-norwood-park-east-chicago/?utm_source=GoogleMaps&utm_medium=GoogleMaps&utm_campaign=Chicago-60646",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 203
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "e7822a8c-c516-46dd-b5cc-faeb646e41dd",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Arzet Heating & Air Conditioning, Inc.",
+    "address": {
+      "formatted": "3271 W Armitage Ave, Chicago, IL 60647, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 312-719-6721",
+    "google_place_id": "ChIJLUWGxJyzD4gRLJVIg5VuWEA",
+    "website_url": "https://www.arzethvac.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 200
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "c7f99fad-f181-45a5-b06e-2999f53bc2a2",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "City & Suburban",
+    "address": {
+      "formatted": "1225 N Cleaver St, Chicago, IL 60642, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-238-3838",
+    "google_place_id": "ChIJAYUk1QLTD4gRm4TPuPqrxrE",
+    "website_url": "https://www.citysuburbanheating.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 5,
+      "review_count": 190
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "ec29aff7-c808-4b99-8bc3-1ca08e8bd11a",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Pro HVAC Heating and Cooling",
+    "address": {
+      "formatted": "2835 N Damen Ave 2R Suite 2R, Chicago, IL 60618, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 312-999-7977",
+    "google_place_id": "ChIJYQoiT-Xyo4ARI6x8sdBvuFU",
+    "website_url": "http://prohvac.info/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 5,
+      "review_count": 187
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "78944878-4107-46ad-ac01-fd39770cf1e1",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Eco Temp HVAC",
+    "address": {
+      "formatted": "1210 S Indiana Ave Apt 4611, Chicago, IL 60605, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 224-253-8131",
+    "google_place_id": "ChIJFYcYsBujD4gRWrpTGE5x2bo",
+    "website_url": "http://ecotemphvac.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 174
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "07af8451-cdd2-4ae3-827f-24dc4dbaf233",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "TDH Mechanical, Heating and Cooling Contractors",
+    "address": {
+      "formatted": "1623 W Montrose Ave, Chicago, IL 60613, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-342-4338",
+    "google_place_id": "ChIJm5Mah6jTD4gR79fjTHKUsI8",
+    "website_url": "https://www.chicagotdhmechanical.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.7,
+      "review_count": 174
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "c41f0842-3e65-4fde-8387-9d5fce0fd47f",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "AB Heating and Cooling",
+    "address": {
+      "formatted": "3312 W Bryn Mawr Ave, Chicago, IL 60659, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 872-302-3295",
+    "google_place_id": "ChIJx9qYa3CCVmAR0djHd_7Whec",
+    "website_url": "https://www.abhvacr.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 163
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "cf9fe8aa-e936-42a0-9e1e-47c876f4bdae",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Chicago Heating & Cooling",
+    "address": {
+      "formatted": "350 N LaSalle St 9th floor, Chicago, IL 60654, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 312-852-5152",
+    "google_place_id": "ChIJId5QBLrLD4gR4pp5byTbFpw",
+    "website_url": "http://www.chicagoheatingandcooling.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 158
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "28b7dd51-4414-4c6d-941b-387ceaf00a3a",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Cosmic HVAC Inc.",
+    "address": {
+      "formatted": "1655 S Blue Island Ave Ste 422, Chicago, IL 60608, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 872-222-3059",
+    "google_place_id": "ChIJ1_zkw6stDogRYEzXr3Yc8FA",
+    "website_url": "http://www.cosmicair.today/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 5,
+      "review_count": 151
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "69ee5c18-9106-4c3b-8819-ac4d648a04cd",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Frontline Heating & Cooling",
+    "address": {
+      "formatted": "1655 S Blue Island Ave #4074, Chicago, IL 60608, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 872-204-7902",
+    "google_place_id": "ChIJw8NGZR4pDogR7NNtHR3k-6U",
+    "website_url": "https://frontlineheatingcooling.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 150
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "b7083279-d56b-4964-8fcf-e13f165c3223",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Sensational Heating And Air LLC",
+    "address": {
+      "formatted": "1021 W Adams St Ste 200, Chicago, IL 60607, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-242-7732",
+    "google_place_id": "ChIJldaPR9m7zgQR7fhcUCOLakM",
+    "website_url": "https://sensationalhvac.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 146
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "fee4e3b2-8a11-49c5-8400-ba274e6fa6d8",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Aircor HVAC air conditioning and heating",
+    "address": {
+      "formatted": "2804 W Belmont Ave #106, Chicago, IL 60618, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-800-1777",
+    "google_place_id": "ChIJpwmyhIDND4gRbtVcYvvYRU4",
+    "website_url": "http://aircorheatingcooling.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.8,
+      "review_count": 145
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "42a1786b-627d-4b9c-b9db-79b901a0ebcc",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "MODERN HVAC TECHNOLOGY",
+    "address": {
+      "formatted": "5555 N Sheridan Rd Ste 3, Chicago, IL 60640, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 312-502-9394",
+    "google_place_id": "ChIJ_RqHj_vRD4gR8kit8c9FYTQ",
+    "website_url": "https://modernhvactech.com/services-we-offer-in-chicago/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.7,
+      "review_count": 123
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "a42ed77a-46b5-4360-900c-906ecf3699ce",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "HeatCool Service Co",
+    "address": {
+      "formatted": "4511 N Kedzie Ave, Chicago, IL 60625, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-539-5225",
+    "google_place_id": "ChIJAU8bU77ND4gReo9hNNfWyrw",
+    "website_url": "https://www.heatcool.net/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.6,
+      "review_count": 113
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "b5aa52f4-1bf6-48b1-bb3a-38dc7bf6c371",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Mid-City Heating, Ventilation & Air Conditioning Inc.",
+    "address": {
+      "formatted": "8156 S Western Ave, Chicago, IL 60620, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-776-4200",
+    "google_place_id": "ChIJ64-gePEvDogR3ajsJZEnY38",
+    "website_url": "https://midcityhvac.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 110
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "97f0ea8e-166c-47c4-81aa-00dd24b1f1a1",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "D's Air Heating & Cooling",
+    "address": {
+      "formatted": "549 N Monticello Ave, Chicago, IL 60624, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-940-0965",
+    "google_place_id": "ChIJCQvOHLYyDogRel10gPeAxLQ",
+    "website_url": "https://www.dsairheating.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.6,
+      "review_count": 90
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "107cc481-3265-4132-9a86-12905b6f1fe5",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "85 Heating and Cooling Inc",
+    "address": {
+      "formatted": "3747 W Eastwood Ave, Chicago, IL 60625, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-617-5956",
+    "google_place_id": "ChIJKUqInBXND4gRzY4mozwaPwU",
+    "website_url": "http://85heatingcooling.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 84
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "f13a7f99-9357-4ba6-91d8-a88c0c7f6b81",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Ukrainian Village HVAC",
+    "address": {
+      "formatted": "2617 W Iowa St, Chicago, IL 60622, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-396-3950",
+    "google_place_id": "ChIJJwafp6zSD4gRrSNsBQmmXSU",
+    "website_url": "https://ukiehvac.com/",
+    "has_website": true,
+    "review_signal": {
+      "rating": 5,
+      "review_count": 83
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": null
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": false,
+      "reason": null,
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  },
+  {
+    "account_id": "55c7d48a-ecf2-4a67-bda3-3415edbdb13b",
+    "source": "google_places",
+    "vertical": "hvac",
+    "business_name": "Hvac Royal Service Inc",
+    "address": {
+      "formatted": "1631 N Meade Ave, Chicago, IL 60639, USA",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "country": "US"
+    },
+    "phone": "+1 773-816-6393",
+    "google_place_id": "ChIJp39iyfrLD4gRJ--1lIJxTOI",
+    "website_url": null,
+    "has_website": false,
+    "review_signal": {
+      "rating": 4.9,
+      "review_count": 83
+    },
+    "diagnostic": {
+      "run_at": null,
+      "seo_audit": {
+        "score": null,
+        "findings": []
+      },
+      "digital_presence_audit": {
+        "score": null,
+        "findings": []
+      },
+      "skipped_reason": "no_website"
+    },
+    "revenue_leak": {
+      "estimate_low_usd": null,
+      "estimate_high_usd": null,
+      "basis": [],
+      "pitch_summary": null
+    },
+    "outreach": {
+      "stage": "not_started",
+      "loss_reason": null,
+      "human_minutes_spent": 0
+    },
+    "website_build": {
+      "needed": true,
+      "reason": "no_website_downsell",
+      "status": "not_started",
+      "build_time_minutes": null
+    },
+    "product": {
+      "sold": [],
+      "revenue_usd": 0
+    },
+    "meta": {
+      "currency": "USD",
+      "timezone": "Asia/Calcutta",
+      "created_at": "2026-07-27T05:19:58.137Z",
+      "updated_at": "2026-07-27T05:19:58.137Z"
+    }
+  }
+]

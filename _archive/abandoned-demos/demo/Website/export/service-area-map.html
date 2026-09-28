@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service area map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+  html, body, #map { margin: 0; height: 100%; width: 100%; font-family: Archivo, Arial, sans-serif; }
+  .leaflet-tile-pane { filter: grayscale(1) contrast(1.05) brightness(1.02); }
+  .leaflet-popup-content { font-family: Archivo, Arial, sans-serif; font-size: 13px; color: #201e1d; }
+  .leaflet-popup-content b { font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+  var map = L.map('map', { scrollWheelZoom: false }).setView([41.9310, -87.7620], 12);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 18
+  }).addTo(map);
+
+  var accent = '#ec3013';
+  function pin(color) {
+    return L.divIcon({
+      className: '',
+      html: '<div style="width:14px;height:14px;background:' + color + ';border:2px solid #201e1d;"></div>',
+      iconSize: [14, 14],
+      iconAnchor: [7, 7]
+    });
+  }
+
+  L.marker([41.9382, -87.7429], { icon: pin(accent) }).addTo(map)
+    .bindPopup('<b>Lakeside Heating &amp; Air</b><br>4210 W Belmont Ave — home base');
+
+  var areas = [
+    { name: 'Hermosa', lat: 41.9231, lng: -87.7292 },
+    { name: 'Montclare', lat: 41.9231, lng: -87.7897 },
+    { name: 'Galewood', lat: 41.9483, lng: -87.7897 },
+    { name: 'Cragin', lat: 41.9333, lng: -87.7267 },
+    { name: 'Dunning', lat: 41.9722, lng: -87.8067 }
+  ];
+  areas.forEach(function (a) {
+    L.marker([a.lat, a.lng], { icon: pin('#201e1d') }).addTo(map).bindPopup('<b>' + a.name + '</b><br>Serviced area');
+  });
+</script>
+</body>
+</html>

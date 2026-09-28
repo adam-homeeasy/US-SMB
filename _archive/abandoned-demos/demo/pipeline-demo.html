@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agency Master Agent — Pipeline Demo (Dummy Data)</title>
+<style>
+  :root{
+    --ink:#1a2233; --ink-soft:#4b5670; --line:#e2e6ee; --bg:#f4f6fa; --card:#ffffff;
+    --brand:#2451c9; --brand-soft:#eaf0fe;
+    --good:#1a8f5e; --good-bg:#e7f8f0;
+    --warn:#b5750a; --warn-bg:#fdf3e0;
+    --bad:#c22b3f; --bad-bg:#fde8ea;
+    --mono: 'SF Mono', 'Consolas', monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:var(--bg); color:var(--ink);}
+  .topbar{position:sticky; top:0; z-index:20; background:var(--ink); color:#fff; padding:14px 28px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  .topbar .title{font-weight:700; font-size:15px; letter-spacing:.2px;}
+  .topbar .tag{font-size:11px; background:#ffb020; color:#3a2a00; padding:3px 9px; border-radius:20px; font-weight:700; margin-left:10px;}
+  .nav{display:flex; gap:4px; flex-wrap:wrap;}
+  .nav a{color:#c7d0e6; text-decoration:none; font-size:12.5px; padding:6px 10px; border-radius:6px;}
+  .nav a:hover{background:rgba(255,255,255,.1); color:#fff;}
+  .wrap{max-width:1080px; margin:0 auto; padding:28px 20px 80px;}
+  .account-card{background:linear-gradient(135deg,#1a2233,#2c3a5c); color:#fff; border-radius:16px; padding:26px 30px; margin-bottom:28px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px;}
+  .account-card h1{margin:0 0 6px; font-size:24px;}
+  .account-card .sub{color:#c7d0e6; font-size:13.5px; line-height:1.6;}
+  .chips{display:flex; gap:8px; flex-wrap:wrap; align-items:flex-start;}
+  .chip{font-size:11.5px; font-weight:700; padding:5px 11px; border-radius:20px; white-space:nowrap;}
+  .chip.no-site{background:var(--bad-bg); color:var(--bad);}
+  .chip.vertical{background:rgba(255,255,255,.15); color:#fff;}
+  .chip.rating{background:rgba(255,255,255,.15); color:#fff;}
+
+  .stage{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px 26px; margin-bottom:20px; scroll-margin-top:70px;}
+  .stage-head{display:flex; align-items:center; gap:12px; margin-bottom:16px;}
+  .stage-num{width:30px; height:30px; border-radius:8px; background:var(--brand-soft); color:var(--brand); font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .stage-head h2{margin:0; font-size:16.5px;}
+  .stage-head .agent-name{color:var(--ink-soft); font-size:12.5px; margin-top:2px;}
+
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;}
+  @media(max-width:720px){.grid2,.grid3{grid-template-columns:1fr;}}
+
+  .panel{background:#fafbfd; border:1px solid var(--line); border-radius:10px; padding:14px 16px;}
+  .panel h3{margin:0 0 8px; font-size:12px; text-transform:uppercase; letter-spacing:.5px; color:var(--ink-soft);}
+  .panel ul{margin:0; padding-left:18px; font-size:13px; line-height:1.7;}
+  .panel p{margin:0; font-size:13px; line-height:1.6;}
+
+  .score-row{display:flex; align-items:center; gap:14px; margin-bottom:14px; flex-wrap:wrap;}
+  .score-pill{font-size:12.5px; font-weight:700; padding:6px 13px; border-radius:8px;}
+  .score-pill.bad{background:var(--bad-bg); color:var(--bad);}
+  .score-pill.warn{background:var(--warn-bg); color:var(--warn);}
+  .score-pill.good{background:var(--good-bg); color:var(--good);}
+
+  .findings{list-style:none; margin:0; padding:0;}
+  .findings li{padding:9px 0; border-bottom:1px dashed var(--line); font-size:13.5px; display:flex; gap:10px;}
+  .findings li:last-child{border-bottom:none;}
+  .findings li .dot{width:7px; height:7px; border-radius:50%; margin-top:6px; flex-shrink:0;}
+  .dot.bad{background:var(--bad);} .dot.warn{background:var(--warn);} .dot.good{background:var(--good);}
+
+  .revenue-box{background:linear-gradient(135deg,#0f2a1c,#163f2b); color:#fff; border-radius:12px; padding:22px 26px; text-align:center; margin-bottom:16px;}
+  .revenue-box .num{font-size:34px; font-weight:800; color:#7be8ae;}
+  .revenue-box .label{font-size:12.5px; color:#a9d9bf; margin-top:4px;}
+  .basis-tags{display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:14px;}
+  .basis-tags span{background:rgba(255,255,255,.12); font-size:11px; padding:4px 10px; border-radius:20px;}
+
+  .email-mock{background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  .email-mock .hdr{background:#f0f3f9; padding:10px 16px; font-size:12px; color:var(--ink-soft); border-bottom:1px solid var(--line);}
+  .email-mock .body{padding:16px; font-size:13.5px; line-height:1.7;}
+
+  .stage-flow{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;}
+  .flow-step{background:var(--brand-soft); color:var(--brand); font-size:12px; font-weight:700; padding:6px 12px; border-radius:8px;}
+  .flow-step.arrow{background:none; color:var(--ink-soft); padding:6px 2px;}
+
+  footer{text-align:center; font-size:12px; color:var(--ink-soft); padding:30px 0 10px;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div><span class="title">Agency Master Agent</span><span class="tag">DIAGNOSTIC PIPELINE</span></div>
+  <div class="nav">
+    <a href="#s1">1. List Building</a>
+    <a href="#s2a">2A. Research</a>
+    <a href="#s2b">2B. SEO</a>
+    <a href="#s2c">2C. Discoverability</a>
+    <a href="#s3">3. Revenue Leak</a>
+    <a href="#s4">4. Outreach</a>
+    <a href="#s5">5. Website Build</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="account-card">
+    <div>
+      <h1>Lakeside Heating &amp; Air</h1>
+      <div class="sub">
+        4210 W Belmont Ave, Chicago, IL 60641 &nbsp;·&nbsp; (312) 555-0142<br>
+        google_place_id: ChIJ_demo_lakeside_hvac_0142 &nbsp;·&nbsp; source: google_places<br>
+        account_id: 8f2a1c40-demo-4b91-9e7d-lakeside0001
+      </div>
+    </div>
+    <div class="chips">
+      <span class="chip vertical">HVAC</span>
+      <span class="chip rating">★ 4.7 (62 reviews)</span>
+      <span class="chip no-site">NO WEBSITE — downsell lead</span>
+    </div>
+  </div>
+
+  <!-- STAGE 1 -->
+  <div class="stage" id="s1">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><h2>List Building Tool</h2><div class="agent-name">SMB_Scout_Tool.html — deterministic, no AI call</div></div>
+    </div>
+    <div class="grid3">
+      <div class="panel"><h3>Identity</h3><p>Lakeside Heating &amp; Air<br>HVAC contractor<br>Chicago, IL 60641</p></div>
+      <div class="panel"><h3>Signal pulled</h3><p>Rating 4.7 · 62 reviews<br>websiteUri: <em>null</em><br>has_website: <strong>false</strong></p></div>
+      <div class="panel"><h3>Flag set</h3><p><span class="score-pill bad">NO WEBSITE</span><br>website_build.reason: no_website_downsell</p></div>
+    </div>
+  </div>
+
+  <!-- STAGE 2A -->
+  <div class="stage" id="s2a">
+    <div class="stage-head">
+      <div class="stage-num">2A</div>
+      <div><h2>Research &amp; Analysis Agent</h2><div class="agent-name">diagnostic.competitive_research — segment batch: hvac / chicago</div></div>
+    </div>
+    <div class="grid2">
+      <div class="panel">
+        <h3>Segment research</h3>
+        <p>HVAC is an urgency-driven, trust-first category — most searches happen during a breakdown. Financing visibility, licensing/insurance badges, and same-day availability messaging convert disproportionately well versus general service pages.</p>
+      </div>
+      <div class="panel">
+        <h3>Local competition (Chicago, HVAC)</h3>
+        <ul>
+          <li>ChiTown Comfort Systems — online booking, live chat, financing calculator</li>
+          <li>Windy City HVAC Pros — strong review carousel, no online booking</li>
+          <li>North Side Air &amp; Heat — dated site, no mobile optimization (opportunity)</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>National best practices (same vertical)</h3>
+        <ul>
+          <li>One Hour Heating &amp; Air-style trust badges above the fold</li>
+          <li>Membership/maintenance-plan CTA as a secondary conversion path</li>
+          <li>Instant financing pre-qualification widget</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Industry-agnostic design mining</h3>
+        <ul>
+          <li>DTC home-services: before/after visual proof carousels</li>
+          <li>Review-platform widgets embedded live, not screenshotted</li>
+          <li>Sticky mobile "Call Now / Book Now" bar (borrowed from restaurant-reservation UX)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:14px;">
+      <h3>Funnel / lead-capture assessment</h3>
+      <p>No funnel exists — no site means no lead form, no scheduling widget, no lead magnet. 2 of 3 local competitors have online booking; the account currently relies entirely on phone calls sourced from its Google listing.</p>
+    </div>
+  </div>
+
+  <!-- STAGE 2B -->
+  <div class="stage" id="s2b">
+    <div class="stage-head">
+      <div class="stage-num">2B</div>
+      <div><h2>SEO Agent</h2><div class="agent-name">diagnostic.seo_audit — scoring-only wrap of seo-tool + site-audit</div></div>
+    </div>
+    <div class="score-row">
+      <span class="score-pill bad">Own-site score: N/A (no website)</span>
+      <span class="score-pill bad">Gap vs. national: 100% (full loss)</span>
+      <span class="score-pill warn">Gap vs. local: ~65% (2 of 3 competitors rank for core terms)</span>
+    </div>
+    <ul class="findings">
+      <li><span class="dot bad"></span>No website means zero organic or map-driven web traffic capture is possible — modeled as full benchmark loss, not skipped.</li>
+      <li><span class="dot warn"></span>Estimated 400-600 monthly searches ("hvac repair chicago," "furnace repair near me," "ac installation [neighborhood]") are currently going entirely to competitors with a site.</li>
+      <li><span class="dot warn"></span>ChiTown Comfort Systems and Windy City HVAC Pros both hold page-1 rankings for the account's core service terms in its own service area.</li>
+    </ul>
+  </div>
+
+  <!-- STAGE 2C -->
+  <div class="stage" id="s2c">
+    <div class="stage-head">
+      <div class="stage-num">2C</div>
+      <div><h2>Discoverability Agent</h2><div class="agent-name">diagnostic.discoverability_audit + review_state</div></div>
+    </div>
+    <div class="grid2">
+      <div class="panel">
+        <h3>Local Pack (Google Maps / GBP)</h3>
+        <ul class="findings">
+          <li><span class="dot good"></span>GBP found and claimed; primary category correctly set to "HVAC contractor."</li>
+          <li><span class="dot warn"></span>NAP consistency: 65/100 — phone number listed differently on one directory (Yelp shows an old number).</li>
+          <li><span class="dot warn"></span>Appears in map pack for branded searches only, not for "hvac repair near me" — losing the map pack to the 2 competitors with stronger review velocity.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>AEO (Answer Engine Optimization)</h3>
+        <ul class="findings">
+          <li><span class="dot bad"></span>Structured content score: 0 — no site, no schema possible (FAQPage/LocalBusiness both absent by definition).</li>
+          <li><span class="dot bad"></span>Brand-mention footprint: low. Found on 2 review platforms, zero Reddit/forum presence, zero guest-content mentions.</li>
+          <li><span class="dot warn"></span>An AI answer engine asked "best HVAC company in Belmont Cragin" would currently have nothing to cite for this business at all.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:14px;">
+      <h3>Review state</h3>
+      <p>62 reviews · 4.7 avg rating · ~3 new reviews/month · 15% owner response rate. Rating and count are genuine strengths — the gap is entirely in visibility and response consistency, not review quality itself.</p>
+    </div>
+  </div>
+
+  <!-- STAGE 3 -->
+  <div class="stage" id="s3">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><h2>Revenue Leak Calculator</h2><div class="agent-name">revenue_leak — deterministic once per-vertical assumptions are set</div></div>
+    </div>
+    <div class="revenue-box">
+      <div class="num">$3,200 – $7,800 / month</div>
+      <div class="label">estimated revenue currently lost to discoverability gaps</div>
+      <div class="basis-tags">
+        <span>seo_traffic_gap</span><span>local_pack_invisibility</span><span>aeo_invisibility</span><span>funnel_gap</span>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Pitch summary</h3>
+      <p>Lakeside Heating &amp; Air has a strong reputation (4.7★, 62 reviews) but no website at all — every dollar of organic search, map-pack, and AI-answer-engine demand in its category is currently going to two local competitors instead. At an estimated 400-600 monthly searches for core service terms in its own service area, even a conservative capture rate puts $3,200-$7,800/month of reachable revenue on the table before any paid marketing spend.</p>
+    </div>
+  </div>
+
+  <!-- STAGE 4 -->
+  <div class="stage" id="s4">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><h2>Outreach Sequence</h2><div class="agent-name">outreach.stage: not_started → drafted, not sent</div></div>
+    </div>
+    <div class="email-mock">
+      <div class="hdr">To: lakesideheatingair@example.com &nbsp;·&nbsp; Subject: Quick question about Lakeside Heating &amp; Air's website</div>
+      <div class="body">
+        Hi there — I came across Lakeside Heating &amp; Air while looking at HVAC companies in Belmont Cragin. Your reviews are genuinely excellent (4.7★ across 62 of them), which is rarer than it sounds.<br><br>
+        One thing stood out: you don't have a website right now, and two of your closest competitors do — both show up ahead of you for searches like "hvac repair near me" in your own service area. Based on local search volume, that's likely $3,000-$8,000 a month in jobs going to them instead of you.<br><br>
+        I build websites specifically for HVAC and home-service businesses — flat $199, live in about a week, built around what's actually working for the best HVAC sites nationally right now. Worth a 10-minute call this week?
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 5 -->
+  <div class="stage" id="s5">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><h2>Website Build Agent V4</h2><div class="agent-name">Strategy → Architecture → UI/UX → Copy → Claude Design</div></div>
+    </div>
+    <div class="stage-flow">
+      <span class="flow-step">Strategy</span><span class="flow-step arrow">→</span>
+      <span class="flow-step">Architecture</span><span class="flow-step arrow">→</span>
+      <span class="flow-step">UI/UX</span><span class="flow-step arrow">→</span>
+      <span class="flow-step">Copy</span><span class="flow-step arrow">→</span>
+      <span class="flow-step" style="background:#0f2a1c;color:#7be8ae;">Claude Design</span>
+    </div>
+    <div class="grid2">
+      <div class="panel">
+        <h3>Strategy</h3>
+        <p>Positioning: the trusted neighborhood HVAC company with the reviews to prove it, easy to book same-day. Primary CTA: phone call / instant booking. Secondary: maintenance-plan signup.</p>
+      </div>
+      <div class="panel">
+        <h3>Architecture</h3>
+        <p>Hero (trust + urgency) → Services grid → Live review carousel → Service-area map → Financing/membership block → Sticky mobile call bar → Contact/book form.</p>
+      </div>
+      <div class="panel">
+        <h3>UI/UX</h3>
+        <p>Navy + amber palette (trust + warmth), bold condensed headline type, photo-led hero with a real technician image, high-contrast CTA buttons, sticky "Call Now" bar on mobile.</p>
+      </div>
+      <div class="panel">
+        <h3>Copy (headline sample)</h3>
+        <p>"Belmont Cragin's most-reviewed HVAC company — now online." Subhead: "62 five-star neighbors can't be wrong. Same-day service, honest pricing, no surprises." CTA: "Book a same-day visit."</p>
+      </div>
+    </div>
+    <p style="margin-top:14px; font-size:12.5px; color:var(--ink-soft);">→ The full build prompt compiled from these four outputs is in <strong>claude-design-build-prompt.md</strong>, delivered alongside this file.</p>
+  </div>
+
+</div>
+
+<footer>Agency Master Agent — full diagnostic pipeline output. Generated 2026-07-27.</footer>
+
+</body>
+</html>

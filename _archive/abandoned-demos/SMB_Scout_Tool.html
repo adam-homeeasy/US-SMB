@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMB Scout - Market Research Tool</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f4f5f7; color: #1a1a2e; line-height: 1.45; padding: 24px;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  header { margin-bottom: 20px; border-bottom: 2px solid #000d22; padding-bottom: 14px; }
+  h1 { font-size: 22px; color: #000d22; }
+  .sub { font-size: 13px; color: #666; margin-top: 4px; }
+
+  .key-row { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 14px; margin-bottom: 14px; }
+  .key-row label { font-size: 12px; font-weight: 600; color: #444; display: block; margin-bottom: 6px; }
+  .key-row input { width: 100%; padding: 9px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; font-family: monospace; }
+  .key-hint { font-size: 11px; color: #888; margin-top: 6px; }
+  .key-saved { font-size: 11px; color: #2e6b4f; margin-top: 6px; font-weight: 600; }
+
+  .mode-row { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 14px; margin-bottom: 14px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .mode-row .field { display: flex; flex-direction: column; }
+  .mode-row label { font-size: 12px; font-weight: 600; color: #444; margin-bottom: 6px; }
+  .mode-row input, .mode-row select { padding: 9px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; }
+  .mode-hint { font-size: 11px; color: #888; margin-top: 4px; grid-column: 1 / -1; }
+
+  .controls { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 16px; display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end; }
+  .controls .field { display: flex; flex-direction: column; }
+  .controls label { font-size: 12px; font-weight: 600; color: #444; margin-bottom: 6px; }
+  .controls input, .controls select { padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; }
+  button.go { background: #dba637; color: #000d22; border: none; padding: 11px 22px; border-radius: 6px; font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  button.go:hover { background: #c8941f; }
+  button.go:disabled { background: #ccc; cursor: not-allowed; }
+
+  .filters { display: flex; gap: 14px; margin-top: 12px; grid-column: 1 / -1; flex-wrap: wrap; align-items: center; }
+  .filters .field { flex-direction: row; align-items: center; gap: 6px; }
+  .filters label { margin-bottom: 0; }
+  .filters input[type=number] { width: 70px; }
+
+  .status { padding: 12px; border-radius: 6px; margin-bottom: 14px; font-size: 13px; display: none; }
+  .status.show { display: block; }
+  .status.err { background: #fbe8e8; color: #9b2226; border: 1px solid #e7b8b8; }
+  .status.info { background: #e8f0fb; color: #1d3b6b; border: 1px solid #b8cce7; }
+  .status.ok { background: #e8f2ec; color: #2e6b4f; border: 1px solid #b8d8c4; }
+
+  .toolbar { display: none; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+  .toolbar.show { display: flex; }
+  .toolbar .count { font-size: 13px; color: #444; font-weight: 600; }
+  button.csv { background: #000d22; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 13px; cursor: pointer; }
+  button.csv:hover { background: #1a2740; }
+
+  .venue { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+  .venue.pull { border-left: 5px solid #2e6b4f; }
+  .venue.consider { border-left: 5px solid #dba637; }
+  .venue.skip { border-left: 5px solid #ccc; opacity: 0.72; }
+  .score-box { text-align: center; min-width: 64px; }
+  .score-num { font-size: 26px; font-weight: 800; line-height: 1; }
+  .score-num.pull { color: #2e6b4f; }
+  .score-num.consider { color: #b5851f; }
+  .score-num.skip { color: #999; }
+  .score-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #999; margin-top: 2px; }
+  .tier-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 7px; border-radius: 4px; margin-top: 4px; display: inline-block; }
+  .tier-tag.pull { background: #e8f2ec; color: #2e6b4f; }
+  .tier-tag.consider { background: #fff3d6; color: #8a6d1a; }
+  .tier-tag.skip { background: #eee; color: #999; }
+  .pull-check { display: flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 12px; color: #444; cursor: pointer; }
+  .pull-check input { width: 16px; height: 16px; cursor: pointer; }
+  .score-parts { font-size: 10px; color: #aaa; margin-top: 4px; }
+  .venue-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .venue-name { font-size: 17px; font-weight: 700; color: #000d22; }
+  .venue-name a { color: #000d22; text-decoration: none; }
+  .venue-name a:hover { text-decoration: underline; }
+  .venue-meta { font-size: 12px; color: #666; margin-top: 3px; }
+  .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .badge { font-size: 12px; padding: 3px 9px; border-radius: 12px; font-weight: 600; }
+  .badge.rating { background: #fff3d6; color: #8a6d1a; }
+  .badge.price { background: #e8f2ec; color: #2e6b4f; }
+  .badge.type { background: #eef0f3; color: #444; }
+
+  .summary { font-size: 13px; color: #333; margin-top: 10px; font-style: italic; }
+
+  .insights { margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .insight-box { background: #fafbfc; border: 1px solid #eee; border-radius: 6px; padding: 10px; }
+  .insight-box h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #888; margin-bottom: 6px; }
+  .tag { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 4px; margin: 2px; }
+  .tag.copy { background: #e8f2ec; color: #2e6b4f; }
+  .tag.avoid { background: #fbe8e8; color: #9b2226; }
+  .tag.dish { background: #eef0f3; color: #333; }
+
+  .reviews { margin-top: 12px; }
+  .reviews summary { cursor: pointer; font-size: 13px; font-weight: 600; color: #1d3b6b; }
+  .review { font-size: 12px; color: #444; padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+  .review .r-meta { color: #999; font-size: 11px; margin-bottom: 2px; }
+
+  .photos { margin-top: 12px; }
+  .photos summary { cursor: pointer; font-size: 13px; font-weight: 600; color: #1d3b6b; }
+  .photo-grid { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .photo-grid img { width: 130px; height: 130px; object-fit: cover; border-radius: 6px; border: 1px solid #ddd; cursor: pointer; }
+  .photo-note { font-size: 11px; color: #888; margin-top: 6px; }
+
+  .badge.phone { background: #eef0f3; color: #444; }
+  .badge.website { background: #eef0f3; color: #1d3b6b; }
+  .badge.nowebsite { background: #ffe3e3; color: #a11a1a; font-weight: 700; }
+  .badge.chain { background: #fbe8e8; color: #9b2226; }
+  .badge.closed { background: #eee; color: #666; }
+  .badge.catering { background: #eee; color: #666; }
+  .badge.gap { background: #fdeccb; color: #8a4b0a; }
+
+  .tf-panel { margin-top: 12px; background: #fafbfc; border: 1px solid #eee; border-radius: 6px; padding: 10px 12px; }
+  .tf-panel h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #888; margin-bottom: 8px; }
+  .tf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }
+  .tf-field { display: flex; flex-direction: column; }
+  .tf-field label { font-size: 10px; font-weight: 600; color: #888; margin-bottom: 3px; }
+  .tf-field input, .tf-field select { padding: 6px 8px; border: 1px solid #ccc; border-radius: 5px; font-size: 12px; }
+  .tf-chain-check { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #9b2226; grid-column: 1 / -1; margin-top: 2px; }
+  .tf-chain-check input { width: 14px; height: 14px; }
+
+  .exclude-row { display: flex; flex-direction: column; grid-column: 1 / -1; margin-top: 4px; }
+  .exclude-row label { font-size: 11px; font-weight: 600; color: #444; margin-bottom: 4px; }
+  .exclude-row input { padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 12px; }
+
+  button.csv.tf { background: #5a3d9b; }
+  button.csv.tf:hover { background: #482f80; }
+  button.csv.smb { background: #1d6b3b; }
+  button.csv.smb:hover { background: #14522c; }
+
+  @media (max-width: 700px) {
+    .controls { grid-template-columns: 1fr; }
+    .mode-row { grid-template-columns: 1fr; }
+    .insights { grid-template-columns: 1fr; }
+    .tf-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>SMB Scout</h1>
+    <div class="sub">Market-research and list-building tool. Search any local-service or F&amp;B business by category and area, pull ratings, price band, phone, website presence, reviews, photos, and mined insights. Forked from F&amp;B Scout v2 (2026-07) and generalized for US SMB verticals (HVAC, plumbing, roofing, dental, med spa, law) alongside the original F&amp;B/Table Foundry use case &mdash; same engine, two analysis modes.</div>
+  </header>
+
+  <div class="key-row">
+    <label for="apiKey">Google Places API key (stored only in this browser, never sent anywhere but Google)</label>
+    <input type="password" id="apiKey" placeholder="Paste your AIza... key here" autocomplete="off">
+    <div class="key-hint">Saved locally on this device. Restricted to Places API (New) as set up. Click the field and paste once; it remembers.</div>
+    <div class="key-saved" id="keySaved" style="display:none;">✓ Key saved on this device</div>
+  </div>
+
+  <div class="mode-row">
+    <div class="field">
+      <label for="analysisMode">Analysis mode</label>
+      <select id="analysisMode">
+        <option value="smb" selected>General SMB (HVAC, plumbing, dental, law, etc.)</option>
+        <option value="fnb">F&amp;B / restaurant (original Table Foundry mode)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="currency">Currency for price-band display</label>
+      <select id="currency">
+        <option value="USD" selected>$ USD</option>
+        <option value="INR">₹ INR</option>
+        <option value="GBP">£ GBP</option>
+        <option value="AUD">A$ AUD</option>
+        <option value="CAD">C$ CAD</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="verticalTag">Vertical / category tag (for exported records)</label>
+      <input type="text" id="verticalTag" placeholder="e.g. hvac, plumbing, dental, law_firm">
+    </div>
+    <div class="mode-hint">Analysis mode swaps the review-mining keyword library (food/service themes for F&amp;B vs. service/responsiveness/professionalism themes for general SMB) and turns the catering auto-flag on/off. The vertical tag is written into every exported SMB account record — it does not affect the search itself, only the label attached to results.</div>
+  </div>
+
+  <div class="controls">
+    <div class="field">
+      <label for="query">What to look for, one or more terms, comma-separated (required)</label>
+      <input type="text" id="query" placeholder="e.g. HVAC contractor, AC repair company">
+    </div>
+    <div class="field">
+      <label for="location">Areas / cities, one or more, comma-separated (required)</label>
+      <input type="text" id="location" placeholder="e.g. Austin TX, Tampa FL">
+    </div>
+    <button class="go" id="searchBtn">Search</button>
+
+    <div class="filters">
+      <div class="field" style="flex-direction:column;align-items:flex-start;">
+        <label style="margin-bottom:6px;">Rating band (optional, blank = no limit)</label>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <input type="number" id="minRating" min="0" max="5" step="0.1" placeholder="min" style="width:70px;">
+          <span style="font-size:12px;color:#888;">to</span>
+          <input type="number" id="maxRating" min="0" max="5" step="0.1" placeholder="max" style="width:70px;">
+        </div>
+      </div>
+      <div class="field" style="flex-direction:column;align-items:flex-start;">
+        <label style="margin-bottom:6px;">Price level (optional, none checked = all levels)</label>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:#444;">
+          <label style="display:flex;align-items:center;gap:4px;font-weight:400;"><input type="checkbox" class="priceLevelBox" value="PRICE_LEVEL_INEXPENSIVE"> Inexpensive</label>
+          <label style="display:flex;align-items:center;gap:4px;font-weight:400;"><input type="checkbox" class="priceLevelBox" value="PRICE_LEVEL_MODERATE"> Moderate</label>
+          <label style="display:flex;align-items:center;gap:4px;font-weight:400;"><input type="checkbox" class="priceLevelBox" value="PRICE_LEVEL_EXPENSIVE"> Expensive</label>
+          <label style="display:flex;align-items:center;gap:4px;font-weight:400;"><input type="checkbox" class="priceLevelBox" value="PRICE_LEVEL_VERY_EXPENSIVE"> Very expensive</label>
+        </div>
+      </div>
+      <div class="field" style="flex-direction:column;align-items:flex-start;">
+        <span style="font-size:11px;color:#888;">Runs every term x every area, then dedupes into one list. Each combination pulls up to 60 venues (Google's own hard cap per query, 3 pages of 20). If an area needs more than that for one term, split it into more specific terms or sub-areas/neighbourhoods and run them as separate comma-separated entries.</span>
+      </div>
+      <div class="exclude-row">
+        <label for="excludeChains">Auto-flag as chain if name contains (comma-separated, case-insensitive). Flagged accounts are tiered as skip and left unticked, but still shown, not deleted.</label>
+        <input type="text" id="excludeChains" placeholder="e.g. ServiceMaster, Roto-Rooter, Mr. Rooter, national franchise brands">
+      </div>
+    </div>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <div class="toolbar" id="toolbar">
+    <span class="count" id="count"></span>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+      <select id="tierFilter" style="padding:7px;border:1px solid #ccc;border-radius:6px;font-size:12px;">
+        <option value="all">Show all tiers</option>
+        <option value="pull">Pull only</option>
+        <option value="pull,consider">Pull + Consider</option>
+        <option value="selected">Selected only</option>
+        <option value="nowebsite">No website only (downsell leads)</option>
+      </select>
+      <button class="csv" id="urlsBtn" style="background:#1d3b6b;">Copy selected Maps links</button>
+      <button class="csv" id="csvBtn">Export benchmark CSV</button>
+      <button class="csv smb" id="smbJsonBtn">Export SMB account records (JSON)</button>
+      <button class="csv tf" id="tfCsvBtn">Export TF (F&amp;B) client config CSV</button>
+    </div>
+  </div>
+  <details id="urlBox" style="display:none;background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px;margin-bottom:12px;">
+    <summary style="cursor:pointer;font-size:13px;font-weight:600;color:#1d3b6b;">All matched Maps links (for IDS / opening in tabs)</summary>
+    <textarea id="urlList" readonly style="width:100%;height:140px;margin-top:8px;font-family:monospace;font-size:11px;border:1px solid #ccc;border-radius:6px;padding:8px;"></textarea>
+    <div style="font-size:11px;color:#888;margin-top:6px;">One URL per line. Paste into Instant Data Scraper's URL list, or open in tabs. These are only the venues that matched your criteria. The API already did the filtering.</div>
+  </details>
+
+  <div id="results"></div>
+</div>
+
+<script>
+const CURRENCY_PRICE_MAPS = {
+  USD: { PRICE_LEVEL_INEXPENSIVE: "$", PRICE_LEVEL_MODERATE: "$$", PRICE_LEVEL_EXPENSIVE: "$$$", PRICE_LEVEL_VERY_EXPENSIVE: "$$$$", PRICE_LEVEL_FREE: "Free" },
+  INR: { PRICE_LEVEL_INEXPENSIVE: "₹", PRICE_LEVEL_MODERATE: "₹₹", PRICE_LEVEL_EXPENSIVE: "₹₹₹", PRICE_LEVEL_VERY_EXPENSIVE: "₹₹₹₹", PRICE_LEVEL_FREE: "Free" },
+  GBP: { PRICE_LEVEL_INEXPENSIVE: "£", PRICE_LEVEL_MODERATE: "££", PRICE_LEVEL_EXPENSIVE: "£££", PRICE_LEVEL_VERY_EXPENSIVE: "££££", PRICE_LEVEL_FREE: "Free" },
+  AUD: { PRICE_LEVEL_INEXPENSIVE: "A$", PRICE_LEVEL_MODERATE: "A$$", PRICE_LEVEL_EXPENSIVE: "A$$$", PRICE_LEVEL_VERY_EXPENSIVE: "A$$$$", PRICE_LEVEL_FREE: "Free" },
+  CAD: { PRICE_LEVEL_INEXPENSIVE: "C$", PRICE_LEVEL_MODERATE: "C$$", PRICE_LEVEL_EXPENSIVE: "C$$$", PRICE_LEVEL_VERY_EXPENSIVE: "C$$$$", PRICE_LEVEL_FREE: "Free" }
+};
+function getPriceMap(){ return CURRENCY_PRICE_MAPS[document.getElementById("currency").value] || CURRENCY_PRICE_MAPS.USD; }
+
+// ---- review analysis (mirrors the python engine, runs in-browser) ----
+// Two keyword libraries: the original F&B one (unchanged), and a general-SMB
+// one for local-service verticals (HVAC, plumbing, dental, law, etc.), picked
+// at runtime by the Analysis mode selector.
+const THEME_KEYWORDS_FNB = {
+  "food quality": ["delicious","tasty","fresh","flavour","flavor","bland","well cooked","undercooked","overcooked","authentic","amazing food"],
+  "service": ["service","staff","rude","friendly","attentive","slow service","waiter","polite","helpful"],
+  "ambience": ["ambience","ambiance","decor","vibe","cozy","music","seating","interior","aesthetic","crowded","noisy"],
+  "value": ["worth","overpriced","expensive","cheap","value for money","reasonable","pricey","affordable"],
+  "wait time": ["wait","waited","quick","fast","long queue","delay","prompt"],
+  "hygiene": ["clean","hygiene","dirty","hygienic","unclean","spotless"],
+  "portion": ["portion","quantity","generous","small portion","filling"],
+  "health": ["healthy","guilt free","protein","low calorie","keto","fresh ingredients","diet","clean eating"]
+};
+const THEME_KEYWORDS_SMB = {
+  "responsiveness": ["responsive","quick to respond","called back","never called back","showed up on time","late","no-show","same day","emergency","prompt"],
+  "quality of work": ["quality","shoddy","sloppy","fixed it right","had to come back","redo","warranty","professional job","did it right"],
+  "pricing/value": ["overcharged","fair price","reasonable","expensive","cheap","quote","estimate","upsell","hidden fees","worth it"],
+  "professionalism": ["professional","rude","courteous","respectful","polite","unprofessional","knowledgeable","friendly technician"],
+  "reliability": ["reliable","honest","trustworthy","scam","dependable","recommend","would not recommend","again"],
+  "cleanliness": ["clean","messy","left a mess","tidy","cleaned up after"],
+  "communication": ["explained","communication","kept me updated","no communication","clear about cost","transparent"]
+};
+const POSITIVE = new Set("delicious tasty fresh amazing great good excellent love loved best friendly attentive polite worth reasonable affordable clean generous quick fast prompt healthy authentic spotless cozy perfect wonderful fantastic professional reliable honest trustworthy dependable knowledgeable courteous responsive".split(" "));
+const NEGATIVE = new Set("bland rude slow overpriced expensive pricey dirty unclean small delay long undercooked overcooked noisy crowded disappointing worst bad terrible average mediocre cold stale soggy unprofessional scam dishonest unreliable shoddy sloppy".split(" "));
+const ITEM_HINTS_FNB = ["bowl","smoothie","salad","wrap","pasta","ramen","noodle","pancake","matcha","coffee","brownie","biryani","roll","shake","sandwich","rice","tofu","paneer","chicken","burger","pizza","acai","poke","burrito","soup","toast","latte","dessert"];
+const ITEM_HINTS_SMB = ["quote","estimate","warranty","emergency","same day","financing","inspection","maintenance","tune-up","installation","repair","permit","licensed","insured","consultation","diagnostic","cleaning","replacement"];
+
+function activeMode(){ return document.getElementById("analysisMode").value; }
+function activeThemeKeywords(){ return activeMode()==="fnb" ? THEME_KEYWORDS_FNB : THEME_KEYWORDS_SMB; }
+function activeItemHints(){ return activeMode()==="fnb" ? ITEM_HINTS_FNB : ITEM_HINTS_SMB; }
+function itemLabel(){ return activeMode()==="fnb" ? "Most-mentioned items in reviews" : "Most-mentioned service terms in reviews"; }
+
+function sentiment(text){
+  const t = text.toLowerCase();
+  let pos=0,neg=0;
+  POSITIVE.forEach(w=>{ if(t.includes(w)) pos++; });
+  NEGATIVE.forEach(w=>{ if(t.includes(w)) neg++; });
+  if(pos===0&&neg===0) return 0;
+  return (pos-neg)/(pos+neg);
+}
+
+function analyzeReviews(reviews){
+  const texts = reviews.map(r=>{
+    if(r.text && typeof r.text==="object") return r.text.text||"";
+    if(typeof r.text==="string") return r.text;
+    if(r.originalText) return r.originalText.text||"";
+    return "";
+  }).filter(Boolean);
+
+  const themeKeywords = activeThemeKeywords();
+  const itemHints = activeItemHints();
+  const themeHits = {}; const itemCount = {}; const sents = [];
+  texts.forEach(t=>{
+    const low = t.toLowerCase();
+    sents.push(sentiment(t));
+    for(const [theme,kws] of Object.entries(themeKeywords)){
+      if(kws.some(k=>low.includes(k))){
+        (themeHits[theme]=themeHits[theme]||[]).push(sentiment(t));
+      }
+    }
+    itemHints.forEach(h=>{ if(low.includes(h)) itemCount[h]=(itemCount[h]||0)+1; });
+  });
+
+  const themes={}; const copy=[]; const avoid=[];
+  for(const [theme,arr] of Object.entries(themeHits)){
+    const avg = arr.reduce((a,b)=>a+b,0)/arr.length;
+    const lean = avg>0.15?"positive":(avg<-0.15?"negative":"mixed");
+    themes[theme]={mentions:arr.length,sentiment:avg.toFixed(2),lean};
+    if(lean==="positive") copy.push(theme);
+    else if(lean==="negative") avoid.push(theme);
+  }
+  const topItems = Object.entries(itemCount).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const overall = sents.length? (sents.reduce((a,b)=>a+b,0)/sents.length).toFixed(2):0;
+  return {reviewsAnalyzed:texts.length, overall, themes, topDishes: topItems, copy, avoid};
+}
+
+// ---- API call ----
+const FIELD_MASK = [
+  "nextPageToken",
+  "places.id","places.displayName","places.formattedAddress","places.addressComponents",
+  "places.priceLevel","places.priceRange","places.rating",
+  "places.userRatingCount","places.primaryTypeDisplayName",
+  "places.editorialSummary","places.googleMapsUri","places.businessStatus",
+  "places.nationalPhoneNumber","places.internationalPhoneNumber","places.websiteUri",
+  "places.reviews","places.photos"
+].join(",");
+
+let lastResults = [];
+
+async function search(){
+  const key = document.getElementById("apiKey").value.trim();
+  if(!key){ showStatus("err","Paste your Places API key first."); return; }
+  const terms = document.getElementById("query").value.split(",").map(s=>s.trim()).filter(Boolean);
+  const areas = document.getElementById("location").value.split(",").map(s=>s.trim()).filter(Boolean);
+  const minRating = document.getElementById("minRating").value;
+  const maxRating = document.getElementById("maxRating").value;
+  const priceLevels = Array.from(document.querySelectorAll(".priceLevelBox:checked")).map(el=>el.value);
+  const excludeTerms = document.getElementById("excludeChains").value.split(",").map(s=>s.trim().toLowerCase()).filter(Boolean);
+
+  if(!terms.length){ showStatus("err","Enter at least one term to look for."); return; }
+  if(!areas.length){ showStatus("err","Enter at least one area or city."); return; }
+
+  const btn = document.getElementById("searchBtn");
+  btn.disabled = true; btn.textContent = "Searching…";
+  document.getElementById("results").innerHTML = "";
+  document.getElementById("toolbar").classList.remove("show");
+
+  // Build every term x area combination.
+  const combos = [];
+  terms.forEach(t=>areas.forEach(a=>combos.push({term:t, area:a})));
+
+  const byId = new Map();      // place id -> venue (dedupe)
+  const sourceCount = new Map(); // place id -> how many queries surfaced it (popularity signal)
+  let comboDone = 0;
+  let errored = null;
+
+  for(const c of combos){
+    comboDone++;
+    const label = c.area ? `"${c.term}" in ${c.area}` : `"${c.term}"`;
+    showStatus("info",`Search ${comboDone}/${combos.length}: ${label} - ${byId.size} unique accounts so far...`);
+
+    const baseBody = { textQuery: c.area ? `${c.term} in ${c.area}` : c.term, pageSize: 20 };
+    if(minRating) baseBody.minRating = parseFloat(minRating);
+    if(priceLevels.length) baseBody.priceLevels = priceLevels;
+
+    try {
+      let pageToken = null, pages = 0;
+      while(pages < 3){
+        const body = Object.assign({}, baseBody);
+        if(pageToken) body.pageToken = pageToken;
+        const resp = await fetch("https://places.googleapis.com/v1/places:searchText", {
+          method:"POST",
+          headers:{ "Content-Type":"application/json", "X-Goog-Api-Key":key, "X-Goog-FieldMask":FIELD_MASK },
+          body: JSON.stringify(body)
+        });
+        if(!resp.ok){ const t = await resp.text(); throw new Error(`HTTP ${resp.status}: ${t}`); }
+        const data = await resp.json();
+        (data.places||[]).forEach(p=>{
+          const id = p.id;
+          if(!id) return;
+          if(!byId.has(id)) byId.set(id, p);
+          sourceCount.set(id, (sourceCount.get(id)||0)+1);
+        });
+        pages++;
+        pageToken = data.nextPageToken;
+        if(!pageToken) break;
+        await new Promise(r=>setTimeout(r,3000));
+      }
+    } catch(e){
+      errored = e.message;
+      break;
+    }
+  }
+
+  if(errored){
+    showStatus("err","Search failed. "+errored+" - if this mentions CORS or referrer, the key may need an 'HTTP referrer' restriction removed; keep it API-restricted only.");
+    btn.disabled=false; btn.textContent="Search";
+    if(byId.size===0) return;
+  }
+
+  const priceMap = getPriceMap();
+  const fnbMode = activeMode()==="fnb";
+
+  // Rank: by how many queries surfaced it (relevance), then rating, then review count.
+  let venues = Array.from(byId.values());
+  venues.forEach(v=>{ v._sources = sourceCount.get(v.id)||1; });
+  // ---- TRIAGE SCORING ----
+  // Priority score (0-100) = which accounts define the market & deserve a closer look.
+  // Components: credibility (rating discounted by review confidence), market presence
+  // (review volume, log-scaled), relevance (multi-search surfacing). Price band is
+  // NOT scored in -- shown as a tag so you sample across bands deliberately.
+  const maxSources = Math.max(...venues.map(v=>v._sources||1), 1);
+  venues.forEach(v=>{
+    const rating = v.rating || 0;
+    const reviews = v.userRatingCount || 0;
+    // confidence: a rating means little under ~50 reviews; saturates by ~500
+    const confidence = Math.min(reviews / 500, 1);
+    const credibility = (rating / 5) * confidence;            // 0..1
+    // market presence: log scale so 2000 reviews isn't 10x a 200-review place
+    const presence = reviews > 0 ? Math.min(Math.log10(reviews) / Math.log10(3000), 1) : 0; // 0..1
+    const relevance = (v._sources || 1) / maxSources;         // 0..1
+    // weighted blend
+    const score = 100 * (0.45 * credibility + 0.35 * presence + 0.20 * relevance);
+    v._score = Math.round(score);
+    v._tier = score >= 45 ? "pull" : (score >= 25 ? "consider" : "skip");
+    v._scoreParts = {
+      credibility: Math.round(credibility*100),
+      presence: Math.round(presence*100),
+      relevance: Math.round(relevance*100)
+    };
+    // chain flag: name matches an excluded term -> force to skip, don't auto-select
+    const nameLow = (v.displayName?.text||"").toLowerCase();
+    v._chainFlagged = excludeTerms.some(t=>nameLow.includes(t));
+    // closed flag: hard exclude, not user-configurable
+    v._closedFlagged = v.businessStatus === "CLOSED_PERMANENTLY" || v.businessStatus === "CLOSED_TEMPORARILY";
+    // catering flag: F&B-mode only, hard exclude, not user-configurable
+    const typeLow = (v.primaryTypeDisplayName?.text||"").toLowerCase();
+    v._cateringFlagged = fnbMode && (nameLow.includes("catering") || typeLow.includes("catering"));
+    // rating band: max rating isn't a Places API search param, so applied client-side here
+    v._aboveRatingBand = !!(maxRating && v.rating && v.rating > parseFloat(maxRating));
+    if(v._chainFlagged || v._closedFlagged || v._cateringFlagged || v._aboveRatingBand) v._tier = "skip";
+    // gap-opportunity flag: expensive/very-expensive tier with rating under 4.0 -- often has real
+    // upside despite the price band, don't let it get buried by the price-agnostic scoring above
+    v._gapOpportunity = (v.priceLevel === "PRICE_LEVEL_EXPENSIVE" || v.priceLevel === "PRICE_LEVEL_VERY_EXPENSIVE") && v.rating && v.rating < 4.0;
+    // has_website: the single highest-value SMB signal in this whole tool -- no
+    // website at all means a clean $199 downsell lead, independent of tier/score.
+    v._hasWebsite = !!v.websiteUri;
+    // TF client-config fields, editable by the user per venue, blank until filled
+    v._instagram = v._instagram || "";
+    v._zomato = v._zomato || "";
+    v._category = v._category || (v.primaryTypeDisplayName?.text || "");
+    v._chainManual = v._chainManual || false;
+    // ownership isn't a Places API field -- manual analyst call, blank until set
+    v._ownership = v._ownership || "";
+  });
+
+  venues.sort((a,b)=> (b._score - a._score) || ((b.userRatingCount||0)-(a.userRatingCount||0)) );
+
+  // default-select the pull tier, never auto-select a flagged venue (chain, closed, catering, out-of-band)
+  venues.forEach(v=>{ v._selected = (v._tier === "pull") && !v._chainFlagged && !v._closedFlagged && !v._cateringFlagged && !v._aboveRatingBand; });
+
+  lastResults = venues;
+  render(venues, key, priceMap);
+  const pull = venues.filter(v=>v._tier==="pull").length;
+  const consider = venues.filter(v=>v._tier==="consider").length;
+  const skip = venues.filter(v=>v._tier==="skip").length;
+  const chains = venues.filter(v=>v._chainFlagged).length;
+  const closed = venues.filter(v=>v._closedFlagged).length;
+  const catering = venues.filter(v=>v._cateringFlagged).length;
+  const noWebsite = venues.filter(v=>!v._hasWebsite).length;
+  showStatus("ok",`${venues.length} unique accounts, triaged. PULL ${pull} (worth a closer look), CONSIDER ${consider}, SKIP ${skip}${chains?`, of which ${chains} auto-flagged as chains`:""}${closed?`, ${closed} flagged closed`:""}${catering?`, ${catering} flagged catering`:""}. ${noWebsite} of ${venues.length} have NO website -- these are your cleanest $199 downsell leads regardless of tier. The ${pull} pull-tier accounts are pre-ticked; adjust ticks, then export.`);
+  btn.disabled=false; btn.textContent="Search";
+}
+
+function render(venues, key, priceMap){
+  const root = document.getElementById("results");
+  root.innerHTML = "";
+  if(!venues.length){ showStatus("info","No accounts matched. Try a broader query."); return; }
+
+  document.getElementById("count").textContent = `${venues.length} accounts`;
+  document.getElementById("toolbar").classList.add("show");
+
+  // populate bulk URL list with selected (pull tier pre-selected)
+  refreshUrlList();
+  updateSelCount();
+  document.getElementById("urlBox").style.display = "block";
+
+  venues.forEach(v=>{
+    const name = v.displayName?.text || "Unknown";
+    const addr = v.formattedAddress || "";
+    const rating = v.rating ? v.rating.toFixed(1) : "-";
+    const count = v.userRatingCount || 0;
+    const price = priceMap[v.priceLevel] || "-";
+    const type = v.primaryTypeDisplayName?.text || "";
+    const summary = v.editorialSummary?.text || "";
+    const mapUri = v.googleMapsUri || "#";
+    const phone = v.internationalPhoneNumber || v.nationalPhoneNumber || "";
+    const website = v.websiteUri || "";
+    const reviews = v.reviews || [];
+    const photos = v.photos || [];
+    const a = analyzeReviews(reviews);
+
+    const div = document.createElement("div");
+    div.className = "venue " + v._tier;
+    div.id = "venue-" + v.id;
+
+    let html = `
+      <div class="venue-head">
+        <div style="flex:1;">
+          <div class="venue-name"><a href="${mapUri}" target="_blank">${esc(name)}</a></div>
+          <div class="venue-meta">${esc(addr)}</div>
+          <div style="margin-top:4px;"><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name+' '+addr)}&query_place_id=${v.id}" target="_blank" style="font-size:12px;color:#5a3d9b;font-weight:600;">↗ Open photos on Maps</a></div>
+          <label class="pull-check"><input type="checkbox" ${v._selected?"checked":""} onchange="toggleSelect('${v.id}',this.checked)"> Pull this account</label>
+        </div>
+        <div class="score-box">
+          <div class="score-num ${v._tier}">${v._score}</div>
+          <div class="score-label">priority</div>
+          <span class="tier-tag ${v._tier}">${v._tier}</span>
+          <div class="score-parts">cred ${v._scoreParts.credibility} · vol ${v._scoreParts.presence} · rel ${v._scoreParts.relevance}</div>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="badge rating">★ ${rating} (${count})</span>
+        <span class="badge price">${price}</span>
+        ${type?`<span class="badge type">${esc(type)}</span>`:""}
+        ${phone?`<span class="badge phone">${esc(phone)}</span>`:""}
+        ${website?`<span class="badge website"><a href="${esc(website)}" target="_blank" style="color:inherit;text-decoration:none;">website ↗</a></span>`:`<span class="badge nowebsite">NO WEBSITE — downsell lead</span>`}
+        ${v._sources>1?`<span class="badge" style="background:#e8e0fb;color:#5a3d9b;">surfaced by ${v._sources} searches</span>`:""}
+        ${v._chainFlagged?`<span class="badge chain">auto-flagged: chain</span>`:""}
+        ${v._closedFlagged?`<span class="badge closed">flagged: closed</span>`:""}
+        ${v._cateringFlagged?`<span class="badge catering">flagged: catering</span>`:""}
+        ${v._aboveRatingBand?`<span class="badge closed">above rating band</span>`:""}
+        ${v._gapOpportunity?`<span class="badge gap">low-rated at a high price band — gap opportunity</span>`:""}
+      </div>
+      ${summary?`<div class="summary">${esc(summary)}</div>`:""}
+      <div class="tf-panel">
+        <h4>Client config, fill in before export</h4>
+        <div class="tf-grid">
+          <div class="tf-field">
+            <label>Category / vertical</label>
+            <input type="text" placeholder="e.g. hvac, plumbing, dental" value="${esc(v._category)}" oninput="updateTFField('${v.id}','_category',this.value)">
+          </div>
+          <div class="tf-field">
+            <label>Instagram handle (optional)</label>
+            <input type="text" placeholder="handle_no_at" value="${esc(v._instagram)}" oninput="updateTFField('${v.id}','_instagram',this.value)">
+          </div>
+          <div class="tf-field">
+            <label>Zomato URL (F&amp;B mode only, optional)</label>
+            <input type="text" placeholder="https://www.zomato.com/..." value="${esc(v._zomato)}" oninput="updateTFField('${v.id}','_zomato',this.value)">
+          </div>
+          <div class="tf-field">
+            <label>Phone (edit if wrong)</label>
+            <input type="text" placeholder="+1 XXXXXXXXXX" value="${esc(phone)}" oninput="updateTFField('${v.id}','_phoneOverride',this.value)">
+          </div>
+          <div class="tf-field">
+            <label>Ownership (manual, not from API)</label>
+            <select onchange="updateTFField('${v.id}','_ownership',this.value)">
+              <option value="" ${!v._ownership?"selected":""}>Unset</option>
+              <option value="Independent" ${v._ownership==="Independent"?"selected":""}>Independent / single owner</option>
+              <option value="Small group (2-4)" ${v._ownership==="Small group (2-4)"?"selected":""}>Small group (2-4 locations)</option>
+              <option value="Larger chain / franchise" ${v._ownership==="Larger chain / franchise"?"selected":""}>Larger chain / franchise</option>
+            </select>
+          </div>
+          <label class="tf-chain-check"><input type="checkbox" ${v._chainManual?"checked":""} onchange="toggleChainManual('${v.id}',this.checked)"> This is a chain / franchise location (exclude from outreach)</label>
+        </div>
+      </div>
+    `;
+
+    if(a.reviewsAnalyzed > 0){
+      html += `<div class="insights">
+        <div class="insight-box">
+          <h4>What to copy</h4>
+          ${a.copy.length?a.copy.map(c=>`<span class="tag copy">${esc(c)}</span>`).join(""):'<span style="font-size:12px;color:#999;">No clear strengths in reviews</span>'}
+        </div>
+        <div class="insight-box">
+          <h4>What to avoid</h4>
+          ${a.avoid.length?a.avoid.map(c=>`<span class="tag avoid">${esc(c)}</span>`).join(""):'<span style="font-size:12px;color:#999;">No clear complaints in reviews</span>'}
+        </div>
+      </div>`;
+      if(a.topDishes.length){
+        html += `<div class="insight-box" style="margin-top:10px;">
+          <h4>${itemLabel()}</h4>
+          ${a.topDishes.map(d=>`<span class="tag dish">${esc(d[0])} (${d[1]})</span>`).join("")}
+        </div>`;
+      }
+    }
+
+    if(reviews.length){
+      html += `<details class="reviews"><summary>${reviews.length} reviews, read</summary>`;
+      reviews.forEach(r=>{
+        const txt = r.text?.text || r.originalText?.text || "";
+        const author = r.authorAttribution?.displayName || "Anon";
+        const rRating = r.rating || "";
+        if(txt) html += `<div class="review"><div class="r-meta">${esc(author)} ${rRating?"· ★"+rRating:""}</div>${esc(txt)}</div>`;
+      });
+      html += `</details>`;
+    }
+
+    if(photos.length){
+      html += `<details class="photos"><summary>${photos.length} photos, view</summary><div class="photo-grid">`;
+      photos.slice(0,10).forEach(p=>{
+        const url = `https://places.googleapis.com/v1/${p.name}/media?maxWidthPx=400&key=${key}`;
+        const full = `https://places.googleapis.com/v1/${p.name}/media?maxWidthPx=1600&key=${key}`;
+        html += `<img src="${url}" loading="lazy" onclick="window.open('${full}','_blank')" onerror="this.style.outline='2px solid #c00';this.alt='photo failed to load, check key';" alt="account photo">`;
+      });
+      html += `</div><div class="photo-note">Click a photo to open full size. If photos show red outlines, the key isn't authorised for Place Photos.</div></details>`;
+    } else {
+      html += `<div class="photo-note" style="margin-top:10px;">No photos in this listing.</div>`;
+    }
+
+    div.innerHTML = html;
+    root.appendChild(div);
+  });
+}
+
+function updateTFField(id, field, value){
+  const v = lastResults.find(x=>x.id===id);
+  if(v) v[field] = value;
+}
+
+function toggleChainManual(id, checked){
+  const v = lastResults.find(x=>x.id===id);
+  if(!v) return;
+  v._chainManual = checked;
+  if(checked) v._selected = false;
+  updateSelCount();
+  refreshUrlList();
+}
+
+function slugify(s){
+  return String(s).toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
+}
+
+function makeAccountId(){
+  if(window.crypto && crypto.randomUUID) return crypto.randomUUID();
+  return "acct-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10);
+}
+
+// Parses Places API (New) addressComponents into the flat city/state/zip
+// shape the account record schema expects, instead of leaving them blank
+// and pushing the parse work onto whatever reads the export downstream.
+function parseAddressComponents(v){
+  const comps = v.addressComponents || [];
+  const find = (type) => {
+    const c = comps.find(c => (c.types||[]).includes(type));
+    return c || null;
+  };
+  const locality = find("locality") || find("postal_town") || find("sublocality");
+  const state = find("administrative_area_level_1");
+  const zip = find("postal_code");
+  const street = [find("street_number")?.longText, find("route")?.longText].filter(Boolean).join(" ");
+  return {
+    street: street || null,
+    city: locality?.longText || null,
+    state: state?.shortText || state?.longText || null,
+    zip: zip?.longText || null
+  };
+}
+
+function selectedVenues(){
+  const sel = lastResults.filter(v=>v._selected);
+  return sel.length ? sel : lastResults; // if none ticked, fall back to all
+}
+
+function toggleSelect(id, checked){
+  const v = lastResults.find(x=>x.id===id);
+  if(v) v._selected = checked;
+  refreshUrlList();
+  updateSelCount();
+}
+
+function refreshUrlList(){
+  const urls = selectedVenues().map(v=>v.googleMapsUri).filter(Boolean).join("\n");
+  document.getElementById("urlList").value = urls;
+}
+
+function updateSelCount(){
+  const n = lastResults.filter(v=>v._selected).length;
+  document.getElementById("count").textContent = `${lastResults.length} accounts · ${n} selected`;
+}
+
+function applyTierFilter(){
+  const val = document.getElementById("tierFilter").value;
+  lastResults.forEach(v=>{
+    const el = document.getElementById("venue-"+v.id);
+    if(!el) return;
+    let show = true;
+    if(val==="all") show = true;
+    else if(val==="selected") show = !!v._selected;
+    else if(val==="nowebsite") show = !v._hasWebsite;
+    else show = val.split(",").includes(v._tier);
+    el.style.display = show ? "" : "none";
+  });
+}
+
+function downloadCSV(){
+  const list = selectedVenues();
+  if(!list.length) return;
+  const priceMap = getPriceMap();
+  const rows = [["Name","Priority","Tier","Chain flagged","Closed flagged","Catering flagged","Has website","Ownership","Rating","Reviews","Price","Type","Phone","Website","Surfaced by N searches","Address","Summary","Copy","Avoid","Top items","Maps URL"]];
+  list.forEach(v=>{
+    const a = analyzeReviews(v.reviews||[]);
+    rows.push([
+      v.displayName?.text||"", v._score, v._tier, (v._chainFlagged||v._chainManual)?"yes":"",
+      v._closedFlagged?"yes":"", v._cateringFlagged?"yes":"", v._hasWebsite?"yes":"no", v._ownership||"",
+      v.rating||"", v.userRatingCount||"",
+      priceMap[v.priceLevel]||"", v.primaryTypeDisplayName?.text||"",
+      v.internationalPhoneNumber||v.nationalPhoneNumber||"", v.websiteUri||"",
+      v._sources||1,
+      v.formattedAddress||"", v.editorialSummary?.text||"",
+      a.copy.join("; "), a.avoid.join("; "),
+      a.topDishes.map(d=>`${d[0]}(${d[1]})`).join("; "),
+      v.googleMapsUri||""
+    ]);
+  });
+  const csv = rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(",")).join("\n");
+  const blob = new Blob([csv],{type:"text/csv"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `smb_scout_${Date.now()}.csv`;
+  a.click();
+}
+
+// SMB account record export -- one JSON object per account, matching the
+// account record schema in agency-master-agent-prd.md §2, ready to hand
+// straight to Stage 2 (Diagnostic Engine) without any reshaping.
+function downloadSMBJson(){
+  const vertical = document.getElementById("verticalTag").value.trim();
+  if(!vertical){ showStatus("err","Set a Vertical / category tag before exporting SMB account records — it gets written into every record."); return; }
+  const list = selectedVenues().filter(v=>!v._chainFlagged && !v._chainManual && !v._closedFlagged && !v._aboveRatingBand);
+  if(!list.length){ showStatus("err","Nothing to export. Tick accounts, and untick any flagged as chains."); return; }
+  const nowIso = new Date().toISOString();
+  const records = list.map(v=>{
+    const phone = v._phoneOverride || v.internationalPhoneNumber || v.nationalPhoneNumber || null;
+    const website = v.websiteUri || null;
+    const parsedAddr = parseAddressComponents(v);
+    return {
+      account_id: makeAccountId(),
+      source: "google_places",
+      vertical: vertical,
+      business_name: v.displayName?.text || "",
+      address: {
+        street: parsedAddr.street,
+        city: parsedAddr.city,
+        state: parsedAddr.state,
+        zip: parsedAddr.zip,
+        country: document.getElementById("currency").value==="INR"?"IN":"US",
+        formatted: v.formattedAddress || ""
+      },
+      phone: phone,
+      google_place_id: v.id,
+      website_url: website,
+      has_website: !!website,
+      diagnostic: {
+        run_at: null,
+        seo_audit: { score:null, gap_vs_national:null, gap_vs_local:null, findings:[] },
+        competitive_research: { segment:null, local_competition:[], national_best_practices:[], industry_agnostic_findings:[], funnel_assessment:null },
+        discoverability_audit: {
+          local_pack: { gbp_found:null, primary_category_correct:null, nap_consistency_score:null, appears_in_map_pack_for_target_queries:null, findings:[] },
+          aeo: { structured_content_score:null, schema_present:[], brand_mention_footprint:{ reddit_forum_mentions_found:null, directory_citations_found:[], unlinked_mention_estimate:null }, findings:[] }
+        },
+        review_state: { count: v.userRatingCount||null, avg_rating: v.rating||null, velocity_per_month:null, response_rate_pct:null, sentiment_summary:null, source:"stage1_google_places" },
+        skipped_reason: website?null:"no_website"
+      },
+      revenue_leak: { estimate_low_usd: null, estimate_high_usd: null, basis: [], pitch_summary: null },
+      outreach: { stage: "not_started", loss_reason: null, human_minutes_spent: 0 },
+      website_build: { needed: !website, reason: website?null:"no_website_downsell", status: "not_started", build_time_minutes: null },
+      review_manager: { active:false, started_at:null, last_monitored_at:null, pending_responses_drafted:0, human_minutes_spent:0 },
+      product: { sold: [], revenue_usd: 0 },
+      meta: { currency: document.getElementById("currency").value, timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC", created_at: nowIso, updated_at: nowIso }
+    };
+  });
+  const blob = new Blob([JSON.stringify(records, null, 2)],{type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `smb_account_records_${vertical}_${Date.now()}.json`;
+  a.click();
+  showStatus("ok",`Exported ${records.length} SMB account records (vertical: ${vertical}). ${records.filter(r=>!r.has_website).length} flagged has_website:false — feed this file straight into Stage 2.`);
+}
+
+function downloadTFConfigCSV(){
+  const list = selectedVenues().filter(v=>!v._chainFlagged && !v._chainManual && !v._closedFlagged && !v._cateringFlagged && !v._aboveRatingBand);
+  if(!list.length){ showStatus("err","Nothing to export. Tick accounts, and untick any flagged as chains."); return; }
+  const rows = [["client_id","name","location","phone","category","ownership","instagram_handle","google_query","zomato_url","swiggy_url","tripadvisor_query","local_competitors","city_benchmarks","founder_whatsapp","founder_email"]];
+  list.forEach(v=>{
+    const name = v.displayName?.text || "";
+    const addr = v.formattedAddress || "";
+    const phone = v._phoneOverride || v.internationalPhoneNumber || v.nationalPhoneNumber || "";
+    rows.push([
+      slugify(name),
+      name,
+      addr,
+      phone,
+      v._category || "",
+      v._ownership || "",
+      v._instagram || "",
+      `${name} ${addr}`.trim(),
+      v._zomato || "",
+      "",
+      `${name} cafe`.trim(),
+      "",
+      "",
+      phone,
+      ""
+    ]);
+  });
+  const csv = rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(",")).join("\n");
+  const blob = new Blob([csv],{type:"text/csv"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `tf_client_config_${Date.now()}.csv`;
+  a.click();
+  showStatus("ok",`Exported ${list.length} accounts as TF client config CSV. google_query and founder_whatsapp are pre-filled best-guess, competitors and benchmarks still need a human pass.`);
+}
+
+function esc(s){ return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function showStatus(type,msg){
+  const s=document.getElementById("status");
+  s.className=`status show ${type}`; s.textContent=msg;
+}
+
+// key persistence (localStorage works on file:// in most browsers; if blocked, key just won't persist, still works per-session)
+const keyInput = document.getElementById("apiKey");
+try {
+  const saved = localStorage.getItem("smb_scout_places_key");
+  if(saved){ keyInput.value=saved; document.getElementById("keySaved").style.display="block"; }
+  keyInput.addEventListener("change",()=>{
+    localStorage.setItem("smb_scout_places_key", keyInput.value.trim());
+    document.getElementById("keySaved").style.display="block";
+  });
+} catch(e){ /* localStorage blocked on file://; key works per session */ }
+
+document.getElementById("searchBtn").addEventListener("click",search);
+document.getElementById("csvBtn").addEventListener("click",downloadCSV);
+document.getElementById("smbJsonBtn").addEventListener("click",downloadSMBJson);
+document.getElementById("tfCsvBtn").addEventListener("click",downloadTFConfigCSV);
+document.getElementById("tierFilter").addEventListener("change",applyTierFilter);
+document.getElementById("urlsBtn").addEventListener("click",()=>{
+  const ta = document.getElementById("urlList");
+  if(!ta.value){ return; }
+  ta.select();
+  try {
+    navigator.clipboard.writeText(ta.value);
+    const btn = document.getElementById("urlsBtn");
+    const orig = btn.textContent; btn.textContent = "✓ Copied "+ta.value.split("\n").length+" links";
+    setTimeout(()=>btn.textContent=orig, 2000);
+  } catch(e){
+    document.execCommand("copy"); // fallback
+  }
+  document.getElementById("urlBox").style.display="block";
+  document.getElementById("urlBox").open = true;
+});
+document.getElementById("query").addEventListener("keydown",e=>{ if(e.key==="Enter") search(); });
+document.getElementById("location").addEventListener("keydown",e=>{ if(e.key==="Enter") search(); });
+</script>
+</body>
+</html>
