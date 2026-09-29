@@ -7,8 +7,8 @@
 - **Buy GHL, but narrowly and late.** Use it as the messaging and follow-up layer for RevLabs and Leasify. Keep it out of TF for now. Our own databases stay the system of record everywhere.
 - **Plan:** Starter $97 now, for RevLabs Illinois calling, the RevLabs Texas email lane and the test sandbox. **Upgrade to Unlimited $297** the day HomeEasy's build starts or the first RevLabs Growth client signs. **Switch to annual ($2,970)** at 10 paying clients on GHL. Never buy Agency Pro while GHL stays invisible.
 - **One agency account**, owned by MSM, with a neutral login domain. Each client sub-account sends under the client's own brand. Move Leasify to its own agency account at 10 paying clients or at the first compliance warning, to split the blast radius.
-- **White-label: no.** No SaaS mode, no "RevLabs platform" or "Leasify platform", no white-label app. Keep GHL invisible and sell done-for-you. SaaS mode needs a US Stripe account, and the buyers want outcomes, not logins (`06`).
-- **Start a US entity now** (Stripe Atlas, Delaware LLC, with an Indian CA). This is not for GHL. TF's Stripe Connect plan with restaurants as merchant of record looks blocked from an Indian Stripe account [stripe-docs, via 01]. The same entity gives MSM an EIN for its own texting brand and a US card for the GHL wallet.
+- **White-label: no, for now.** No SaaS mode, no "RevLabs platform" or "Leasify platform", no white-label app. Keep GHL invisible and sell done-for-you, because the buyers want outcomes, not logins, and two founders can't run a help desk (`06`). Payments are **no longer the blocker**: SaaS mode now takes Marketplace payment apps, not only Stripe (`01`, correction of 29 Sep). If one of those apps onboards MSM, SaaS mode is possible without a US entity.
+- **Start a US entity now** (Stripe Atlas, Delaware LLC, with an Indian CA). This is not for GHL, and a GHL payment route does not replace it. TF's Stripe Connect plan with restaurants as merchant of record looks blocked from an Indian Stripe account [stripe-docs, via 01]. The same entity gives MSM an EIN for its own texting brand and a US card for the GHL wallet.
 
 ## Leasify: use GHL for part
 

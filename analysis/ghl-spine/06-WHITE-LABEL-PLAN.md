@@ -6,7 +6,7 @@ Facts are from `01-GHL-TEARDOWN.md` (public docs, checked 28 Sep 2026, no live a
 
 ## Why not resell GHL as our own product
 
-- **SaaS mode is blocked for MSM today.** SaaS mode (GHL's resell-under-your-brand feature with automatic billing) needs Agency Pro ($497) plus the agency's own Stripe or a US merchant account. Stripe India is invite-only with no timeline [stripe-docs, via 01]. Razorpay is not supported [ghl-docs, via 01].
+- **SaaS mode is not open to MSM yet, but the route may exist.** SaaS mode (GHL's resell-under-your-brand feature with automatic billing) needs Agency Pro ($497) plus a payment provider that supports recurring and off-session charges. Stripe India is invite-only [stripe-docs, via 01]. Since mid-2026, SaaS mode also accepts custom payment providers from the App Marketplace, which may give an Indian company a way in. No specific app has been confirmed to onboard MSM, and Razorpay is explicitly excluded [ghl-docs, via 01 correction]. **This is no longer the deciding reason.** The next three reasons are, and they hold even if payments are solved.
 - **The buyers want outcomes, not software.** A plumber, a small property manager and a restaurant owner are all buying "someone handles my follow-up". A login dilutes that pitch and adds a support desk we cannot staff from two founders plus one part-time person.
 - **Reseller terms add risk.** As a SaaS reseller we own all support and disputes. The minimum advertised price clause may catch a cheap tier that bundles CRM, funnels and email. GHL can suspend reselling "with or without notice" [ghl-docs, via 01].
 - **It costs more.** Agency Pro plus a US entity is about $258/month more than Unlimited, and buys nothing we use (`05`).

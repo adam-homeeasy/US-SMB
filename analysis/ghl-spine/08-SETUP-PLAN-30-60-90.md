@@ -15,6 +15,7 @@ The public docs could not settle some questions, so these are the first thing to
 | 3 | Conversation AI can write answers into contact fields, call an outside webhook mid-chat, and hand off to a human | Leasify's AI first responder is not built in GHL. GHL shrinks to calendar, reminders and reactivation (`02`) |
 | 4 | Build one page and run it through `seo_gate.py` and PageSpeed, and try serving a root `llms.txt` | Confirms Track B stays static. That is already the plan, so a failure changes nothing |
 | 5 | Client user role can be limited to inbox, calendar and pipeline | Clients get reports only, no logins |
+| 6 | App Marketplace, Payments: which apps work as a SaaS-mode custom payment provider, and which accept an Indian company charging US cards on subscription (added 29 Sep) | White-label stays off until a US entity exists. The verdict doesn't change either way, since white-label is off for business reasons |
 
 Also on day 0, outside GHL:
 - Check whether MSM already holds an active Stripe account, and which entity owns the RevLabs payment links (`01` check 12).

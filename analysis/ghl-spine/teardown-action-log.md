@@ -59,3 +59,9 @@ WebSearch summaries were used for: Stripe India status and Atlas timeline, A2P t
 ## Not researched (marked assumption in the teardown)
 
 Calendars detail, pipelines detail, users and permissions detail, reporting detail, text-to-pay, bring-your-own Twilio current status, number porting fees, international sending fees, workflow execution limits, exact association limit, App Marketplace search for property systems.
+
+## 29 Sep 2026 follow-up (master, after Adam asked about a new route to sell into the US)
+
+- Searched for the HighLevel webinar of 28 Sep 2026: not found in public sources.
+- Found and read: help.gohighlevel.com article 155000006276 (Custom Payment Providers in SaaS Mode, updated 1 Jul 2026), the changelog entry for custom payment providers, article 155000006075 (providers by product area, updated 17 Feb 2026), and the changelog for 23 to 29 Sep 2026 (no payments or international entries).
+- Result: correction added to 01 (Q2), 06 and 00. SaaS mode can use Marketplace payment apps that support recurring and off-session charges. Razorpay is excluded. No app is yet confirmed to onboard an Indian company.
